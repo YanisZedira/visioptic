@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Blog et actualités Visioptic Design — Opticien à Deuil-la-Barre (95). Conseils santé visuelle, actualités optique, nouveautés montures et lentilles de contact dans le Val-d'Oise.">
+<meta name="keywords" content="opticien Deuil-la-Barre blog, santé visuelle conseils, lunettes progressives, verres polarisants, lentilles contact 95, actualités optique Val-d'Oise, Visioptic Design blog">
+<meta property="og:title" content="Actualités & Conseils Optique — Visioptic Design Deuil-la-Barre">
+<meta property="og:type" content="website">
+<title>Actualités & Conseils Optique — Visioptic Design | Opticien Deuil-la-Barre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAFAF8;--bg2:#F4F3EF;--bg3:#EDECEA;--white:#FFFFFF;--ink:#1a1917;--ink2:#3d3c38;--muted:#787570;--border:#E4E3DF;--border2:#D0CFC9;--gold:#8B6914;--gold-l:#C9A96E;--gold-bg:#FBF6EC;--red:#C44B2B;--r:10px;--sh:0 1px 3px rgba(26,25,23,.06),0 4px 16px rgba(26,25,23,.04);--sh2:0 2px 8px rgba(26,25,23,.08),0 8px 32px rgba(26,25,23,.06);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.6;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:'Playfair Display',serif;letter-spacing:-0.02em;line-height:1.2;}
+.ctr{max-width:1320px;margin:0 auto;padding:0 2.5rem;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;transition:all .22s cubic-bezier(.16,1,.3,1);border-radius:6px;text-decoration:none;}
+.btn-dark{background:var(--ink);color:#fff;}
+.btn-dark:hover{background:var(--ink2);}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(250,250,248,.95);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.nav-in{max-width:1320px;margin:0 auto;padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;}
+.logo{font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:500;color:var(--ink);}
+.logo span{color:var(--gold);}
+.nav-links-s{display:flex;align-items:center;gap:1.5rem;}
+.nav-links-s a{font-size:.82rem;color:var(--muted);transition:color .18s;}
+.nav-links-s a:hover{color:var(--ink);}
+
+.blog-hero{background:var(--white);padding:5rem 0 4rem;border-bottom:1px solid var(--border);}
+.eyebrow{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;}
+.eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold-l);}
+.blog-h1{font-size:clamp(2.2rem,5vw,3.8rem);font-weight:400;margin-bottom:1rem;color:var(--ink);}
+.blog-h1 em{font-style:italic;color:var(--gold);}
+.blog-intro{font-size:1rem;color:var(--muted);line-height:1.75;max-width:560px;font-weight:300;}
+
+/* CATEGORIES FILTER */
+.cats-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:1.2rem 0;position:sticky;top:66px;z-index:90;}
+.cats-inner{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:2px;}
+.cat-btn{font-size:.74rem;letter-spacing:.08em;font-weight:500;padding:.45rem 1.1rem;border-radius:6px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .18s;font-family:'Outfit',sans-serif;white-space:nowrap;}
+.cat-btn:hover,.cat-btn.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+
+/* FEATURED */
+.featured{padding:4rem 0;}
+.feat-grid{display:grid;grid-template-columns:2fr 1fr;gap:1.5rem;}
+.feat-main{background:var(--white);border:1px solid var(--border);border-radius:14px;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .22s cubic-bezier(.16,1,.3,1);}
+.feat-main:hover{box-shadow:var(--sh2);transform:translateY(-2px);}
+.feat-main-img{aspect-ratio:16/8;overflow:hidden;background:var(--bg2);}
+.feat-main-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+.feat-main:hover .feat-main-img img{transform:scale(1.03);}
+.feat-main-body{padding:2.2rem 2.5rem;}
+.feat-cat{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:.75rem;}
+.feat-tit{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:400;color:var(--ink);line-height:1.25;margin-bottom:.9rem;}
+.feat-ex{font-size:.92rem;color:var(--muted);line-height:1.75;font-weight:300;margin-bottom:1.5rem;}
+.feat-meta{font-size:.75rem;color:var(--muted);display:flex;align-items:center;gap:.65rem;}
+.feat-sep{width:3px;height:3px;background:var(--border2);border-radius:50%;}
+
+.feat-side{display:flex;flex-direction:column;gap:1.5rem;}
+.feat-sm{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;transition:all .22s;flex:1;}
+.feat-sm:hover{box-shadow:var(--sh2);transform:translateY(-2px);}
+.feat-sm-img{aspect-ratio:16/9;overflow:hidden;background:var(--bg2);}
+.feat-sm-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.feat-sm:hover .feat-sm-img img{transform:scale(1.04);}
+.feat-sm-body{padding:1.3rem 1.5rem;flex:1;display:flex;flex-direction:column;}
+.feat-sm-tit{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.35;margin-bottom:.5rem;}
+.feat-sm-ex{font-size:.8rem;color:var(--muted);line-height:1.65;font-weight:300;flex:1;}
+.feat-sm-meta{font-size:.7rem;color:var(--muted);margin-top:.9rem;}
+
+/* ALL ARTICLES */
+.all-articles{padding:0 0 6rem;}
+.all-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2rem;}
+.art-c{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .22s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column;}
+.art-c.hidden{display:none;}
+.art-link{text-decoration:none;color:inherit;display:flex;flex-direction:column;flex:1;}
+.art-link:hover .art-img img{transform:scale(1.04);}
+.art-link:hover .art-c-inner{transform:translateY(-2px);}
+.art-img{aspect-ratio:16/9;overflow:hidden;background:var(--bg2);}
+.art-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.art-body{padding:1.4rem 1.5rem;flex:1;display:flex;flex-direction:column;}
+.art-cat{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:.5rem;}
+.art-tit{font-size:.98rem;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:.55rem;}
+.art-ex{font-size:.82rem;color:var(--muted);line-height:1.7;font-weight:300;margin-bottom:1.1rem;flex:1;}
+.art-meta{font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.5rem;margin-top:auto;}
+.art-sep{width:3px;height:3px;background:var(--border2);border-radius:50%;}
+.art-read{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:.3rem;margin-top:1rem;}
+
+/* ARTICLE FULL */
+.article-full{scroll-margin-top:130px;padding:4rem 0;border-top:1px solid var(--border);}
+.article-full:first-of-type{border-top:none;}
+.art-layout{display:grid;grid-template-columns:2fr 1fr;gap:5rem;align-items:start;}
+.art-hero-img{width:100%;border-radius:12px;overflow:hidden;aspect-ratio:16/9;background:var(--bg2);margin-bottom:2rem;}
+.art-hero-img img{width:100%;height:100%;object-fit:cover;}
+.art-header{margin-bottom:1.75rem;}
+.art-full-cat{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:.7rem;}
+.art-full-tit{font-size:clamp(1.6rem,3vw,2.5rem);font-weight:400;color:var(--ink);margin-bottom:.75rem;}
+.art-full-meta{font-size:.78rem;color:var(--muted);display:flex;align-items:center;gap:.65rem;}
+.art-content p{font-size:.92rem;color:var(--ink2);line-height:1.85;margin-bottom:1.3rem;font-weight:300;}
+.art-content h3{font-size:1.3rem;font-weight:500;color:var(--ink);margin:2rem 0 .85rem;}
+.art-content ul{list-style:none;margin-bottom:1.3rem;}
+.art-content ul li{font-size:.9rem;color:var(--ink2);line-height:1.7;padding:.4rem 0 .4rem 1.5rem;position:relative;font-weight:300;}
+.art-content ul li::before{content:'';position:absolute;left:0;top:.9rem;width:6px;height:6px;background:var(--gold);border-radius:50%;}
+.art-content strong{font-weight:600;color:var(--ink);}
+.art-content .highlight{background:var(--gold-bg);border-left:3px solid var(--gold);padding:1.2rem 1.5rem;border-radius:0 8px 8px 0;margin:1.75rem 0;font-size:.9rem;color:var(--ink2);line-height:1.75;}
+.art-sidebar{position:sticky;top:140px;}
+.art-cta-box{background:var(--ink);color:#fff;border-radius:12px;padding:2rem;margin-bottom:1.5rem;}
+.art-cta-box h4{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;margin-bottom:.65rem;}
+.art-cta-box p{font-size:.82rem;color:rgba(255,255,255,.5);line-height:1.7;margin-bottom:1.5rem;font-weight:300;}
+.art-cta-btn{display:block;background:var(--gold-l);color:var(--ink);text-align:center;padding:.9rem;border-radius:8px;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;transition:background .2s;}
+.art-cta-btn:hover{background:#dbc085;}
+.art-tags{margin-bottom:1.5rem;}
+.art-tags-tit{font-size:.65rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-bottom:.75rem;}
+.art-tags-list{display:flex;flex-wrap:wrap;gap:.4rem;}
+.art-tag{font-size:.72rem;background:var(--bg2);color:var(--ink2);padding:.3rem .8rem;border-radius:4px;border:1px solid var(--border);}
+.art-info-box{background:var(--gold-bg);border:1px solid rgba(139,105,20,.15);border-radius:10px;padding:1.5rem;}
+.art-info-box h4{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.5rem;}
+.art-info-box p{font-size:.8rem;color:var(--ink2);line-height:1.7;font-weight:300;}
+
+/* NEWSLETTER */
+.newsletter{background:var(--ink);padding:5rem 0;}
+.newsletter-in{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
+.nl-h2{font-size:clamp(1.8rem,3vw,2.8rem);color:#fff;margin-bottom:.75rem;}
+.nl-h2 em{color:var(--gold-l);}
+.nl-p{font-size:.9rem;color:rgba(255,255,255,.45);line-height:1.75;font-weight:300;}
+.nl-form{display:flex;gap:.75rem;}
+.nl-inp{flex:1;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);color:#fff;padding:.9rem 1.2rem;font-family:'Outfit',sans-serif;font-size:.88rem;border-radius:8px;outline:none;transition:border-color .18s;}
+.nl-inp:focus{border-color:var(--gold-l);}
+.nl-inp::placeholder{color:rgba(255,255,255,.3);}
+.nl-sub{background:var(--gold-l);color:var(--ink);border:none;padding:.9rem 1.6rem;font-family:'Outfit',sans-serif;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;border-radius:8px;cursor:pointer;transition:background .2s;white-space:nowrap;}
+.nl-sub:hover{background:#dbc085;}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}
+
+@media(max-width:1024px){
+  .feat-grid{grid-template-columns:1fr;}
+  .feat-side{flex-direction:row;}
+  .all-grid{grid-template-columns:repeat(2,1fr);}
+  .art-layout{grid-template-columns:1fr;gap:2.5rem;}
+  .art-sidebar{position:static;}
+  .newsletter-in{grid-template-columns:1fr;gap:2.5rem;}
+  .nav-links-s{display:none;}
+}
+@media(max-width:640px){
+  .ctr{padding:0 1.25rem;}
+  .all-grid{grid-template-columns:1fr;}
+  .feat-side{flex-direction:column;}
+  .nl-form{flex-direction:column;}
+  .blog-h1{font-size:2.2rem;}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo">Visioptic <span>Design</span></a>
+    <div class="nav-links-s">
+      <a href="index.html">Accueil</a>
+      <a href="index.html#catalogue">Catalogue</a>
+      <a href="index.html#marques">Marques</a>
+      <a href="index.html#contact">Contact</a>
+      <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="btn btn-dark" style="padding:.6rem 1.2rem;font-size:.72rem;">Prendre RDV</a>
+    </div>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="ctr">
+    <div class="eyebrow">Notre blog</div>
+    <h1 class="blog-h1">Actualités & conseils<br><em>optique à Deuil-la-Barre</em></h1>
+    <p class="blog-intro">Conseils de nos opticiens experts, actualités santé visuelle, nouveautés en montures et lentilles. Tout ce qu'il faut savoir pour bien voir et bien choisir dans le Val-d'Oise.</p>
+  </div>
+</div>
+
+<div class="cats-bar">
+  <div class="ctr">
+    <div class="cats-inner">
+      <button class="cat-btn on" onclick="filterCats('all',this)">Tous les articles</button>
+      <button class="cat-btn" onclick="filterCats('sante',this)">Santé visuelle</button>
+      <button class="cat-btn" onclick="filterCats('montures',this)">Montures & Verres</button>
+      <button class="cat-btn" onclick="filterCats('lentilles',this)">Lentilles</button>
+      <button class="cat-btn" onclick="filterCats('nouveautes',this)">Nouveautés</button>
+      <button class="cat-btn" onclick="filterCats('conseils',this)">Conseils pratiques</button>
+    </div>
+  </div>
+</div>
+
+<!-- FEATURED -->
+<section class="featured">
+  <div class="ctr">
+    <div class="feat-grid">
+      <a href="#verres-progressifs" class="feat-main">
+        <div class="feat-main-img"><img src="https://picsum.photos/seed/progressive-optic-wide/1200/600" alt="Verres progressifs opticien Deuil-la-Barre Val-d'Oise" onerror="this.style.background='var(--bg3)'"></div>
+        <div class="feat-main-body">
+          <div class="feat-cat">Santé visuelle · À la une</div>
+          <h2 class="feat-tit">Tout savoir sur les verres progressifs : guide complet pour bien choisir à Deuil-la-Barre</h2>
+          <p class="feat-ex">Presbytie, correction double foyer, adaptation — notre opticien expert vous guide pas à pas pour choisir les verres progressifs adaptés à votre mode de vie et votre budget.</p>
+          <div class="feat-meta"><span>15 novembre 2024</span><span class="feat-sep"></span><span>8 min de lecture</span><span class="feat-sep"></span><span>Très populaire</span></div>
+        </div>
+      </a>
+      <div class="feat-side">
+        <a href="#verres-polarisants" class="feat-sm">
+          <div class="feat-sm-img"><img src="https://picsum.photos/seed/polarized-lens-bright/600/340" alt="Verres polarisants opticien Deuil-la-Barre" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="feat-sm-body">
+            <div class="feat-cat">Santé visuelle</div>
+            <div class="feat-sm-tit">Verres polarisants : à quoi ça sert vraiment ?</div>
+            <div class="feat-sm-ex">Réduire les reflets, améliorer le contraste, protéger vos yeux.</div>
+            <div class="feat-sm-meta">4 juillet 2024 · 5 min</div>
+          </div>
+        </a>
+        <a href="#ray-ban-stories" class="feat-sm">
+          <div class="feat-sm-img"><img src="https://picsum.photos/seed/smart-glasses-bright/600/340" alt="Ray-Ban Stories Deuil-la-Barre exclusivité" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="feat-sm-body">
+            <div class="feat-cat">Nouveauté</div>
+            <div class="feat-sm-tit">Ray-Ban Stories en exclusivité chez Visioptic Design</div>
+            <div class="feat-sm-ex">Les lunettes connectées Meta sont disponibles en boutique.</div>
+            <div class="feat-sm-meta">15 mars 2024 · 3 min</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALL ARTICLES LIST -->
+<section class="all-articles">
+  <div class="ctr">
+    <h2 style="font-size:clamp(1.6rem,3vw,2.2rem);margin-bottom:.3rem;">Tous nos <em style="color:var(--gold);">articles</em></h2>
+    <p style="color:var(--muted);font-size:.88rem;font-weight:300;">Conseils d'experts opticiens à Deuil-la-Barre, Montmorency, Enghien et tout le Val-d'Oise.</p>
+    <div class="all-grid" id="allGrid">
+      <div class="art-c" data-cat="sante">
+        <a href="#verres-progressifs" class="art-link">
+          <div class="art-img"><img src="https://picsum.photos/seed/progressive-optic/600/340" alt="Verres progressifs Deuil-la-Barre" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="art-body">
+            <div class="art-cat">Santé visuelle</div>
+            <div class="art-tit">Verres progressifs : guide complet pour bien choisir</div>
+            <div class="art-ex">Tout ce qu'il faut savoir sur la presbytie et les verres progressifs — adaptation, prix, remboursement mutuelle.</div>
+            <div class="art-meta"><span>15 novembre 2024</span><span class="art-sep"></span><span>8 min</span></div>
+          </div>
+        </a>
+      </div>
+      <div class="art-c" data-cat="sante">
+        <a href="#verres-polarisants" class="art-link">
+          <div class="art-img"><img src="https://picsum.photos/seed/polarized-light/600/340" alt="Verres polarisants opticien 95" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="art-body">
+            <div class="art-cat">Santé visuelle</div>
+            <div class="art-tit">Verres polarisants : à quoi ça sert vraiment ?</div>
+            <div class="art-ex">Réduire les reflets sur la route, à la mer, en montagne — le guide de nos opticiens sur les verres polarisants.</div>
+            <div class="art-meta"><span>4 juillet 2024</span><span class="art-sep"></span><span>5 min</span></div>
+          </div>
+        </a>
+      </div>
+      <div class="art-c" data-cat="montures">
+        <a href="#montures-progressifs" class="art-link">
+          <div class="art-img"><img src="https://picsum.photos/seed/progressive-frame-choice/600/340" alt="Monture verres progressifs opticien Val-d'Oise" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="art-body">
+            <div class="art-cat">Conseils montures</div>
+            <div class="art-tit">Comment choisir sa monture pour des verres progressifs ?</div>
+            <div class="art-ex">Taille du verre, hauteur de montage, matière — les critères techniques indispensables.</div>
+            <div class="art-meta"><span>4 juillet 2024</span><span class="art-sep"></span><span>4 min</span></div>
+          </div>
+        </a>
+      </div>
+      <div class="art-c" data-cat="nouveautes">
+        <a href="#ray-ban-stories" class="art-link">
+          <div class="art-img"><img src="https://picsum.photos/seed/smart-glasses-tech/600/340" alt="Ray-Ban Stories Meta opticien Deuil-la-Barre" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="art-body">
+            <div class="art-cat">Nouveauté</div>
+            <div class="art-tit">Ray-Ban Stories : disponibles en exclusivité chez Visioptic Design</div>
+            <div class="art-ex">Les lunettes connectées Ray-Ban x Meta sont en boutique à Deuil-la-Barre. Venez les tester.</div>
+            <div class="art-meta"><span>15 mars 2024</span><span class="art-sep"></span><span>3 min</span></div>
+          </div>
+        </a>
+      </div>
+      <div class="art-c" data-cat="lentilles">
+        <a href="#lentilles-journalieres" class="art-link">
+          <div class="art-img"><img src="https://picsum.photos/seed/contact-lens-detail/600/340" alt="Lentilles journalières opticien 95170" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="art-body">
+            <div class="art-cat">Lentilles de contact</div>
+            <div class="art-tit">Lentilles journalières vs mensuelles : laquelle choisir ?</div>
+            <div class="art-ex">Confort, hygiène, budget — notre opticien compare les deux grandes familles de lentilles de contact.</div>
+            <div class="art-meta"><span>8 février 2024</span><span class="art-sep"></span><span>5 min</span></div>
+          </div>
+        </a>
+      </div>
+      <div class="art-c" data-cat="conseils">
+        <a href="#examen-vue" class="art-link">
+          <div class="art-img"><img src="https://picsum.photos/seed/eye-exam-optical/600/340" alt="Examen de vue opticien Deuil-la-Barre 95" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="art-body">
+            <div class="art-cat">Conseils pratiques</div>
+            <div class="art-tit">À quelle fréquence faire réviser sa vue ? La réponse de nos opticiens</div>
+            <div class="art-ex">Adulte, enfant, senior — le rythme recommandé pour votre bilan visuel selon votre âge et situation.</div>
+            <div class="art-meta"><span>12 janvier 2024</span><span class="art-sep"></span><span>4 min</span></div>
+          </div>
+        </a>
+      </div>
+      <div class="art-c" data-cat="montures">
+        <a href="#morphologie" class="art-link">
+          <div class="art-img"><img src="https://picsum.photos/seed/glasses-morphology-face/600/340" alt="Choisir lunettes morphologie visage opticien 95" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="art-body">
+            <div class="art-cat">Conseils montures</div>
+            <div class="art-tit">Quelle monture selon votre morphologie de visage ?</div>
+            <div class="art-ex">Visage rond, carré, ovale, cœur — la méthode de nos opticiens pour trouver la monture parfaite.</div>
+            <div class="art-meta"><span>5 décembre 2023</span><span class="art-sep"></span><span>6 min</span></div>
+          </div>
+        </a>
+      </div>
+      <div class="art-c" data-cat="sante">
+        <a href="#enfants-vue" class="art-link">
+          <div class="art-img"><img src="https://picsum.photos/seed/children-glasses-optician/600/340" alt="Lunettes enfants opticien Deuil-la-Barre 95" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="art-body">
+            <div class="art-cat">Santé visuelle</div>
+            <div class="art-tit">La vue de vos enfants : à quel âge et à quelle fréquence consulter ?</div>
+            <div class="art-ex">Les troubles visuels de l'enfant peuvent impacter l'apprentissage. Nos conseils pour dépister tôt.</div>
+            <div class="art-meta"><span>20 novembre 2023</span><span class="art-sep"></span><span>5 min</span></div>
+          </div>
+        </a>
+      </div>
+      <div class="art-c" data-cat="conseils">
+        <a href="#tiers-payant" class="art-link">
+          <div class="art-img"><img src="https://picsum.photos/seed/optician-insurance-bright/600/340" alt="Tiers payant mutuelle opticien Val-d'Oise" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+          <div class="art-body">
+            <div class="art-cat">Conseils pratiques</div>
+            <div class="art-tit">Remboursement lunettes : tout comprendre sur le tiers payant en 2024</div>
+            <div class="art-ex">Sécurité sociale, mutuelle, 100% santé — comment fonctionne le remboursement de vos lunettes.</div>
+            <div class="art-meta"><span>3 octobre 2023</span><span class="art-sep"></span><span>7 min</span></div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FULL ARTICLES -->
+<div style="background:var(--white);border-top:2px solid var(--border);">
+<div class="ctr" style="padding-top:1rem;">
+  <h2 style="font-size:clamp(1.8rem,3vw,2.5rem);padding:3rem 0 0;" id="articles-complets">Articles complets</h2>
+</div>
+
+<!-- ARTICLE 1 -->
+<article class="article-full" id="verres-progressifs">
+  <div class="ctr">
+    <div class="art-layout">
+      <div>
+        <div class="art-hero-img"><img src="https://picsum.photos/seed/progressive-optic-detail/1200/600" alt="Verres progressifs opticien Deuil-la-Barre Val-d'Oise" onerror="this.style.background='var(--bg3)'"></div>
+        <div class="art-header">
+          <div class="art-full-cat">Santé visuelle · Opticien Deuil-la-Barre</div>
+          <h2 class="art-full-tit">Tout savoir sur les verres progressifs : guide complet</h2>
+          <div class="art-full-meta"><span>15 novembre 2024</span><span class="feat-sep"></span><span>8 min de lecture</span><span class="feat-sep"></span><span>Par nos opticiens experts</span></div>
+        </div>
+        <div class="art-content">
+          <p>La presbytie touche la grande majorité des personnes à partir de 45 ans. Si vous commencez à tenir vos journaux à bout de bras pour les lire, ou si vos bras vous semblent trop courts, il est probablement temps d'envisager des <strong>verres progressifs</strong>. Chez Visioptic Design, opticien indépendant à Deuil-la-Barre (95), nous accompagnons chaque année des dizaines de patients dans cette transition.</p>
+          <h3>Qu'est-ce qu'un verre progressif ?</h3>
+          <p>Un verre progressif, aussi appelé verre à vision progressive ou multifocal, permet de voir nettement à toutes les distances — de près, intermédiaire (ordinateur) et de loin — avec une seule paire de lunettes. Contrairement aux anciens verres double foyer, il n'y a pas de ligne visible : la progression est graduée et invisible.</p>
+          <div class="highlight">À Deuil-la-Barre comme partout en France, les verres progressifs peuvent être remboursés partiellement par l'Assurance Maladie et pris en charge en complément par votre mutuelle. Le dispositif 100% Santé permet même d'accéder à des équipements sans reste à charge dans certaines gammes.</div>
+          <h3>Comment se passe l'adaptation aux verres progressifs ?</h3>
+          <p>L'adaptation est une étape normale. La plupart des patients s'habituent à leurs verres progressifs en 1 à 3 semaines. Quelques conseils de nos opticiens pour faciliter cette période :</p>
+          <ul>
+            <li>Portez vos lunettes dès le réveil, sans les enlever</li>
+            <li>Pour regarder de près, inclinez légèrement la tête vers le bas</li>
+            <li>Pour la vision de loin, regardez droit devant vous</li>
+            <li>En cas de gêne persistante au-delà de 3 semaines, revenez nous voir pour un ajustement</li>
+          </ul>
+          <h3>Le choix de la monture est crucial</h3>
+          <p>Pour que vos verres progressifs fonctionnent correctement, la monture doit répondre à des critères techniques précis. La hauteur de verre doit être suffisante (minimum 28 à 30 mm) pour intégrer les trois zones de vision. C'est pourquoi il est indispensable de choisir sa monture avec un opticien qualifié qui réalise les mesures de centrage.</p>
+          <p>Chez Visioptic Design à Deuil-la-Barre, nous réalisons systématiquement les mesures de centrage pupillaire avec nos équipements de précision, pour garantir un confort de vision optimal dès les premiers jours de port.</p>
+        </div>
+      </div>
+      <div class="art-sidebar">
+        <div class="art-cta-box">
+          <h4>Besoin d'un bilan visuel ?</h4>
+          <p>Nos opticiens experts à Deuil-la-Barre vous reçoivent sur rendez-vous pour un examen de vue complet.</p>
+          <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="art-cta-btn">Prendre rendez-vous →</a>
+        </div>
+        <div class="art-tags">
+          <div class="art-tags-tit">Mots-clés</div>
+          <div class="art-tags-list">
+            <span class="art-tag">Verres progressifs</span><span class="art-tag">Presbytie</span><span class="art-tag">Opticien 95</span><span class="art-tag">Deuil-la-Barre</span><span class="art-tag">Santé visuelle</span><span class="art-tag">Remboursement lunettes</span>
+          </div>
+        </div>
+        <div class="art-info-box">
+          <h4>Visioptic Design — Deuil-la-Barre</h4>
+          <p>1 bis Route de Saint-Denis, 95170 Deuil-la-Barre<br>Tél : <a href="tel:+33134059651" style="color:var(--gold);">01 34 05 96 51</a><br>Lun–Ven : 9h–19h · Sam : 9h–18h</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 2 -->
+<article class="article-full" id="verres-polarisants">
+  <div class="ctr">
+    <div class="art-layout">
+      <div>
+        <div class="art-hero-img"><img src="https://picsum.photos/seed/polarized-outdoor-sun/1200/600" alt="Verres polarisants protection soleil opticien Deuil-la-Barre" onerror="this.style.background='var(--bg3)'"></div>
+        <div class="art-header">
+          <div class="art-full-cat">Santé visuelle · Opticien Deuil-la-Barre 95</div>
+          <h2 class="art-full-tit">Verres polarisants : à quoi ça sert vraiment ?</h2>
+          <div class="art-full-meta"><span>4 juillet 2024</span><span class="feat-sep"></span><span>5 min de lecture</span></div>
+        </div>
+        <div class="art-content">
+          <p>Vous avez sûrement déjà entendu parler des <strong>verres polarisants</strong> dans notre boutique à Deuil-la-Barre, mais vous n'êtes pas sûr de comprendre ce qu'ils apportent concrètement ? Voici l'explication simple et complète de nos opticiens experts.</p>
+          <h3>Comment fonctionne la polarisation ?</h3>
+          <p>La lumière naturelle vibre dans toutes les directions. Lorsqu'elle frappe une surface horizontale — route mouillée, pare-brise, surface de l'eau, neige — elle rebondit et devient polarisée horizontalement, créant un <strong>reflet éblouissant</strong> très inconfortable pour les yeux. Un filtre polarisant bloque spécifiquement ces reflets horizontaux, tout en laissant passer la lumière utile.</p>
+          <h3>Dans quelles situations les verres polarisants sont indispensables ?</h3>
+          <ul>
+            <li><strong>La conduite automobile</strong> : réduction des reflets sur le bitume mouillé et les autres véhicules</li>
+            <li><strong>La pêche et les sports nautiques</strong> : voir sous la surface de l'eau sans les reflets</li>
+            <li><strong>Le ski</strong> : distinguer les variations de neige et la glace</li>
+            <li><strong>La plage et les vacances</strong> : confort visuel toute la journée</li>
+          </ul>
+          <div class="highlight">Important : les verres polarisants ne sont pas adaptés aux activités nécessitant de lire les écrans LCD (certains tableaux de bord, caisses automatiques, smartphones). Dans ces cas, nous pouvons vous proposer des verres avec traitement antireflet haute performance comme alternative.</div>
+          <h3>Quelle différence avec un verre teinté classique ?</h3>
+          <p>Un verre solaire classique réduit la quantité de lumière globale, mais ne supprime pas les reflets parasites. Un verre polarisant, lui, supprime spécifiquement les reflets éblouissants tout en améliorant les contrastes et la profondeur de vision. C'est une technologie différente et complémentaire.</p>
+          <p>Chez Visioptic Design, votre opticien à Deuil-la-Barre, nous proposons des verres polarisants dans toutes les corrections (myopie, astigmatisme, presbytie) et dans les meilleures marques : Maui Jim PolarizedPlus2®, Oakley Prizm Polarized, Ray-Ban polarized.</p>
+        </div>
+      </div>
+      <div class="art-sidebar">
+        <div class="art-cta-box">
+          <h4>Envie d'essayer ?</h4>
+          <p>Venez tester nos verres polarisants en boutique à Deuil-la-Barre. Essai gratuit, sans engagement.</p>
+          <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="art-cta-btn">Prendre rendez-vous →</a>
+        </div>
+        <div class="art-tags">
+          <div class="art-tags-tit">Mots-clés</div>
+          <div class="art-tags-list">
+            <span class="art-tag">Verres polarisants</span><span class="art-tag">Lunettes solaires</span><span class="art-tag">Opticien 95</span><span class="art-tag">Protection UV</span><span class="art-tag">Maui Jim</span><span class="art-tag">Oakley</span>
+          </div>
+        </div>
+        <div class="art-info-box">
+          <h4>Visioptic Design — Deuil-la-Barre</h4>
+          <p>1 bis Route de Saint-Denis, 95170 Deuil-la-Barre<br>Tél : <a href="tel:+33134059651" style="color:var(--gold);">01 34 05 96 51</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 3 -->
+<article class="article-full" id="montures-progressifs">
+  <div class="ctr">
+    <div class="art-layout">
+      <div>
+        <div class="art-hero-img"><img src="https://picsum.photos/seed/frame-selection-optician/1200/600" alt="Choisir monture verres progressifs opticien Deuil-la-Barre 95170" onerror="this.style.background='var(--bg3)'"></div>
+        <div class="art-header">
+          <div class="art-full-cat">Conseils montures · Opticien Val-d'Oise</div>
+          <h2 class="art-full-tit">Comment choisir sa monture pour des verres progressifs ?</h2>
+          <div class="art-full-meta"><span>4 juillet 2024</span><span class="feat-sep"></span><span>4 min de lecture</span></div>
+        </div>
+        <div class="art-content">
+          <p>Choisir sa monture pour des verres progressifs n'est pas anodin. Contrairement aux verres unifocaux, les <strong>progressifs imposent des contraintes techniques</strong> précises sur la forme et la taille de la monture. Voici le guide complet de nos opticiens à Deuil-la-Barre.</p>
+          <h3>La hauteur de la monture : critère n°1</h3>
+          <p>La hauteur intérieure du verre (mesurée de haut en bas) doit être d'au minimum <strong>28 à 30 mm</strong>. En dessous, il est impossible d'intégrer les trois zones de vision (loin, intermédiaire, près) dans le verre. Beaucoup de montures tendance avec des verres très fins ne conviennent pas aux progressifs.</p>
+          <h3>Les autres critères techniques à vérifier</h3>
+          <ul>
+            <li><strong>L'écart pupillaire</strong> : mesuré avec précision par nos opticiens</li>
+            <li><strong>La hauteur de montage</strong> : position de votre pupille dans la monture</li>
+            <li><strong>L'inclinaison de la monture</strong> : angle par rapport au visage</li>
+            <li><strong>La distance verre-œil</strong> : idéalement entre 12 et 14 mm</li>
+          </ul>
+          <div class="highlight">Chez Visioptic Design à Deuil-la-Barre, toutes ces mesures sont réalisées avec notre équipement de centrage de précision — jamais approximées à l'œil. C'est la condition pour que vos verres progressifs fonctionnent parfaitement dès le premier jour.</div>
+          <h3>Les matières de monture adaptées aux progressifs</h3>
+          <p>L'acétate est souvent recommandé car il permet un ajustement précis et tient bien en position. Le titane offre légèreté et solidité. Le métal plein est déconseillé car il se deforme plus facilement et peut modifier l'inclinaison des verres au fil du temps.</p>
+          <p>Venez en boutique à Deuil-la-Barre avec votre ordonnance : nos opticiens vous guideront parmi notre sélection de montures compatibles progressifs et réaliseront toutes les mesures nécessaires.</p>
+        </div>
+      </div>
+      <div class="art-sidebar">
+        <div class="art-cta-box">
+          <h4>Votre ordonnance en main ?</h4>
+          <p>Apportez votre ordonnance en boutique. Nous vérifions la compatibilité de toutes nos montures avec vos verres progressifs.</p>
+          <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="art-cta-btn">Prendre rendez-vous →</a>
+        </div>
+        <div class="art-tags">
+          <div class="art-tags-tit">Mots-clés</div>
+          <div class="art-tags-list">
+            <span class="art-tag">Monture progressifs</span><span class="art-tag">Verres progressifs</span><span class="art-tag">Opticien 95170</span><span class="art-tag">Deuil-la-Barre</span><span class="art-tag">Centrage optique</span>
+          </div>
+        </div>
+        <div class="art-info-box">
+          <h4>Visioptic Design</h4>
+          <p>Expert en santé visuelle certifié<br>1 bis Route de Saint-Denis, 95170 Deuil-la-Barre<br>Tél : <a href="tel:+33134059651" style="color:var(--gold);">01 34 05 96 51</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+
+<!-- ARTICLE 4 -->
+<article class="article-full" id="ray-ban-stories">
+  <div class="ctr">
+    <div class="art-layout">
+      <div>
+        <div class="art-hero-img"><img src="https://picsum.photos/seed/smart-glasses-2024/1200/600" alt="Ray-Ban Stories Meta lunettes connectées Deuil-la-Barre 95" onerror="this.style.background='var(--bg3)'"></div>
+        <div class="art-header">
+          <div class="art-full-cat">Nouveauté · Exclusivité Deuil-la-Barre</div>
+          <h2 class="art-full-tit">Ray-Ban Stories disponibles en exclusivité chez Visioptic Design</h2>
+          <div class="art-full-meta"><span>15 mars 2024</span><span class="feat-sep"></span><span>3 min de lecture</span></div>
+        </div>
+        <div class="art-content">
+          <p>Visioptic Design est le premier opticien du secteur de Deuil-la-Barre et du Val-d'Oise à proposer en boutique les <strong>Ray-Ban Stories</strong>, les lunettes connectées développées en collaboration avec Meta (Facebook). Une exclusivité locale pour une technologie de pointe.</p>
+          <h3>Qu'est-ce que les Ray-Ban Stories ?</h3>
+          <p>Les Ray-Ban Stories sont des lunettes de soleil classiques Ray-Ban intégrant une paire de caméras discrètes, des haut-parleurs et un microphone. Elles permettent de :</p>
+          <ul>
+            <li>Prendre des photos et des vidéos en mode mains libres</li>
+            <li>Écouter de la musique ou des podcasts via les haut-parleurs intégrés</li>
+            <li>Passer et recevoir des appels téléphoniques</li>
+            <li>Activer l'assistant vocal Meta AI</li>
+          </ul>
+          <h3>Comment les essayer ?</h3>
+          <p>Rendez-vous en boutique à Deuil-la-Barre pour une démonstration complète. Nos opticiens vous présenteront les différents coloris et modèles disponibles (Wayfarer, Headliner, Skyler) et vous aideront à trouver la paire qui correspond à votre style et votre usage.</p>
+          <div class="highlight">Disponibles à partir de 299€ chez Visioptic Design — 1 bis Route de Saint-Denis, 95170 Deuil-la-Barre. Premier arrivé, premier servi, stock limité.</div>
+        </div>
+      </div>
+      <div class="art-sidebar">
+        <div class="art-cta-box">
+          <h4>Tester les Ray-Ban Stories</h4>
+          <p>Prenez rendez-vous pour une démo exclusive en boutique à Deuil-la-Barre.</p>
+          <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="art-cta-btn">Réserver ma démo →</a>
+        </div>
+        <div class="art-tags">
+          <div class="art-tags-tit">Mots-clés</div>
+          <div class="art-tags-list">
+            <span class="art-tag">Ray-Ban Stories</span><span class="art-tag">Lunettes connectées</span><span class="art-tag">Meta AI</span><span class="art-tag">Opticien 95</span><span class="art-tag">Deuil-la-Barre</span><span class="art-tag">Exclusivité</span>
+          </div>
+        </div>
+        <div class="art-info-box">
+          <h4>Exclusivité secteur 95</h4>
+          <p>Seul opticien à Deuil-la-Barre et dans le secteur à proposer les Ray-Ban Stories. Venez les essayer !</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</article>
+</div>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="ctr">
+    <div class="newsletter-in">
+      <div>
+        <div style="font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold-l);display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;"><span style="display:block;width:28px;height:1px;background:var(--gold-l);"></span>Newsletter</div>
+        <h2 class="nl-h2">Restez informé des<br><em>nouveautés optique</em></h2>
+        <p class="nl-p">Conseils de nos opticiens, nouveautés en boutique, promotions exclusives pour les abonnés. Pas de spam — que de l'utile, une fois par mois.</p>
+      </div>
+      <div>
+        <div class="nl-form">
+          <input type="email" class="nl-inp" placeholder="votre@email.fr">
+          <button class="nl-sub" onclick="this.textContent='Inscrit ✓';this.style.background='#3ECF8E'">M'inscrire</button>
+        </div>
+        <p style="font-size:.72rem;color:rgba(255,255,255,.2);margin-top:.75rem;">Vos données restent confidentielles. Désinscription en un clic.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer style="background:#111110;color:#fff;padding:3rem 0 2rem;border-top:1px solid rgba(255,255,255,.06);">
+  <div class="ctr">
+    <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06);">
+      <div>
+        <div style="font-family:'Playfair Display',serif;font-size:1.1rem;color:#fff;margin-bottom:.8rem;">Visioptic <span style="color:var(--gold-l);">Design</span></div>
+        <p style="font-size:.8rem;color:rgba(255,255,255,.3);line-height:1.75;max-width:260px;font-weight:300;">Opticien indépendant expert en santé visuelle à Deuil-la-Barre (Val-d'Oise). Conseil personnalisé, montures premium, lentilles de contact.</p>
+      </div>
+      <div>
+        <div style="font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--gold-l);margin-bottom:1rem;">Navigation</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;">
+          <li><a href="index.html" style="font-size:.8rem;color:rgba(255,255,255,.35);font-weight:300;transition:color .18s;">Accueil</a></li>
+          <li><a href="index.html#catalogue" style="font-size:.8rem;color:rgba(255,255,255,.35);font-weight:300;">Catalogue lunettes</a></li>
+          <li><a href="index.html#marques" style="font-size:.8rem;color:rgba(255,255,255,.35);font-weight:300;">Nos marques</a></li>
+          <li><a href="actualites.html" style="font-size:.8rem;color:rgba(255,255,255,.7);font-weight:300;">Actualités</a></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--gold-l);margin-bottom:1rem;">Contact</div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:.6rem;">
+          <li><a href="tel:+33134059651" style="font-size:.8rem;color:rgba(255,255,255,.35);font-weight:300;">01 34 05 96 51</a></li>
+          <li style="font-size:.8rem;color:rgba(255,255,255,.25);font-weight:300;">1 bis Route de Saint-Denis<br>95170 Deuil-la-Barre</li>
+          <li style="font-size:.8rem;color:rgba(255,255,255,.25);font-weight:300;">Lun–Ven : 9h–19h · Sam : 9h–18h</li>
+        </ul>
+      </div>
+    </div>
+    <div style="padding-top:1.75rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div style="font-size:.7rem;color:rgba(255,255,255,.18);">© 2025 Visioptic Design — Tous droits réservés</div>
+      <div style="display:flex;gap:1.5rem;"><a href="#" style="font-size:.7rem;color:rgba(255,255,255,.18);">Mentions légales</a><a href="#" style="font-size:.7rem;color:rgba(255,255,255,.18);">Confidentialité</a></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function filterCats(cat, btn) {
+  document.querySelectorAll('.cat-btn').forEach(b => b.classList.remove('on'));
+  btn.classList.add('on');
+  document.querySelectorAll('#allGrid .art-c').forEach(card => {
+    if (cat === 'all' || card.dataset.cat === cat) {
+      card.classList.remove('hidden');
+    } else {
+      card.classList.add('hidden');
+    }
+  });
+}
+const ro = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); ro.unobserve(e.target); }});
+}, { threshold: .06 });
+document.querySelectorAll('.reveal').forEach(el => ro.observe(el));
+</script>
+</body>
+</html>

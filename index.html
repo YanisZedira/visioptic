@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Visioptic Design — Opticien indépendant à Deuil-la-Barre (95). Expert en santé visuelle certifié. Lunettes, lentilles, montures de créateurs. Prise de rendez-vous en ligne.">
+<meta name="keywords" content="opticien Deuil-la-Barre, opticien 95, lunettes Deuil-la-Barre, lentilles de contact, examen de vue, montures créateurs, Visioptic Design, opticien Val-d'Oise, opticien indépendant 95170">
+<meta property="og:title" content="Visioptic Design — Opticien Deuil-la-Barre">
+<meta property="og:description" content="Expert en santé visuelle à Deuil-la-Barre. Montures premium, examens de vue, lentilles. Prise de rendez-vous en ligne.">
+<meta property="og:type" content="website">
+<title>Visioptic Design — Opticien à Deuil-la-Barre | Expert Santé Visuelle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FAFAF8;--bg2:#F4F3EF;--bg3:#EDECEA;--white:#FFFFFF;--ink:#1a1917;--ink2:#3d3c38;--muted:#787570;--border:#E4E3DF;--border2:#D0CFC9;--gold:#8B6914;--gold-l:#C9A96E;--gold-pale:#F5EDD8;--gold-bg:#FBF6EC;--red:#C44B2B;--green:#2D6A4F;--r:10px;--sh:0 1px 3px rgba(26,25,23,.06),0 4px 16px rgba(26,25,23,.04);--sh2:0 2px 8px rgba(26,25,23,.08),0 8px 32px rgba(26,25,23,.06);}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;line-height:1.6;}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3{font-family:'Playfair Display',serif;letter-spacing:-0.02em;line-height:1.1;}
+
+.ctr{max-width:1320px;margin:0 auto;padding:0 2.5rem;}
+.sp{padding:6.5rem 0;}
+.eyebrow{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;color:var(--gold);display:flex;align-items:center;gap:.75rem;margin-bottom:1.25rem;}
+.eyebrow::before{content:'';display:block;width:28px;height:1px;background:var(--gold-l);}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.8rem;font-family:'Outfit',sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;transition:all .22s cubic-bezier(.16,1,.3,1);border-radius:6px;}
+.btn-dark{background:var(--ink);color:#fff;}
+.btn-dark:hover{background:var(--ink2);transform:translateY(-1px);}
+.btn-dark:active{transform:scale(.98);}
+.btn-out{background:transparent;color:var(--ink);border:1.5px solid var(--border2);}
+.btn-out:hover{border-color:var(--ink);}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(250,250,248,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--border);transition:box-shadow .3s;}
+nav.shadow{box-shadow:0 2px 20px rgba(26,25,23,.08);}
+.nav-in{max-width:1320px;margin:0 auto;padding:0 2.5rem;height:66px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.logo{font-family:'Playfair Display',serif;font-size:1.18rem;font-weight:500;color:var(--ink);letter-spacing:.02em;white-space:nowrap;}
+.logo span{color:var(--gold);}
+.nav-links{display:flex;align-items:center;gap:.15rem;list-style:none;}
+.nav-links a{font-size:.8rem;font-weight:500;color:var(--ink2);padding:.45rem .85rem;border-radius:6px;transition:all .18s;white-space:nowrap;}
+.nav-links a:hover{background:var(--bg2);color:var(--ink);}
+.nav-links .nc{margin-left:.5rem;}
+
+/* SEARCH BAR */
+.nav-search{position:relative;flex:0 0 auto;}
+.nav-search input{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:.42rem 1rem .42rem 2.2rem;font-family:'Outfit',sans-serif;font-size:.8rem;color:var(--ink);width:200px;outline:none;transition:all .22s;}
+.nav-search input:focus{border-color:var(--gold-l);width:260px;background:var(--white);}
+.nav-search-ico{position:absolute;left:.7rem;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;}
+.search-results{position:absolute;top:calc(100% + 6px);left:0;right:0;background:var(--white);border:1px solid var(--border);border-radius:10px;box-shadow:var(--sh2);display:none;z-index:200;overflow:hidden;max-height:320px;overflow-y:auto;}
+.search-results.show{display:block;}
+.search-item{display:flex;align-items:center;gap:.9rem;padding:.75rem 1rem;cursor:pointer;transition:background .15s;border-bottom:1px solid var(--border);}
+.search-item:last-child{border-bottom:none;}
+.search-item:hover{background:var(--bg);}
+.search-item-img{width:42px;height:32px;border-radius:6px;object-fit:cover;background:var(--bg2);}
+.search-item-info{flex:1;}
+.search-item-brand{font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+.search-item-name{font-size:.82rem;font-weight:500;color:var(--ink);}
+.search-item-price{font-size:.78rem;color:var(--muted);}
+.search-no{padding:1rem;font-size:.82rem;color:var(--muted);text-align:center;}
+
+.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hbg span{display:block;width:22px;height:1.5px;background:var(--ink);transition:all .3s;}
+
+.mob-menu{display:none;position:fixed;inset:0;top:66px;background:var(--white);z-index:990;flex-direction:column;padding:2rem 2.5rem;gap:0;border-top:1px solid var(--border);overflow-y:auto;}
+.mob-menu.open{display:flex;}
+.mob-menu a{font-size:1.1rem;font-weight:500;color:var(--ink);padding:1.1rem 0;border-bottom:1px solid var(--border);}
+.mob-cta-btn{margin-top:2rem;background:var(--ink);color:#fff !important;text-align:center;padding:1rem;border-radius:6px;font-size:.85rem;letter-spacing:.06em;border-bottom:none !important;}
+
+.promo{background:linear-gradient(135deg,var(--gold) 0%,#a07820 100%);color:#fff;padding:1rem;text-align:center;font-size:.8rem;font-weight:500;letter-spacing:.03em;position:sticky;top:66px;z-index:999;}
+.promo strong{font-weight:700;}
+
+/* HERO */
+.hero{min-height:100dvh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding-top:66px;background:var(--white);}
+.hero-body{padding:5rem 2.5rem 5rem 5rem;max-width:640px;}
+.hero-h1{font-size:clamp(2.8rem,5vw,4.5rem);font-weight:400;line-height:1.05;margin-bottom:1.5rem;color:var(--ink);}
+.hero-h1 em{font-style:italic;color:var(--gold);}
+.hero-sub{font-size:1rem;color:var(--muted);line-height:1.75;margin-bottom:2.5rem;max-width:440px;font-weight:300;}
+.hero-chips{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:2.5rem;}
+.chip{font-size:.67rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;background:var(--gold-bg);color:var(--gold);padding:.4rem .9rem;border-radius:4px;border:1px solid rgba(139,105,20,.15);}
+.hero-acts{display:flex;align-items:center;gap:1rem;flex-wrap:wrap;}
+.hero-tel{font-size:.84rem;color:var(--muted);display:flex;align-items:center;gap:.45rem;margin-top:1.5rem;}
+.hero-tel svg{color:var(--gold);}
+.hero-vis{height:100dvh;position:relative;overflow:hidden;background:var(--bg2);}
+.hero-vis img{width:100%;height:100%;object-fit:cover;filter:brightness(.97) saturate(.9);}
+.hero-vis-fade{position:absolute;inset:0;background:linear-gradient(to right,var(--white) 0%,transparent 15%);}
+.hero-fc{position:absolute;bottom:3rem;left:2rem;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.2rem 1.6rem;box-shadow:var(--sh);}
+.hero-fn{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:400;color:var(--ink);}
+.hero-fl{font-size:.72rem;color:var(--muted);letter-spacing:.05em;margin-top:2px;}
+
+.stats{background:var(--ink);color:#fff;padding:3rem 0;}
+.stats-g{display:grid;grid-template-columns:repeat(4,1fr);}
+.stat-i{text-align:center;padding:1rem 2rem;border-right:1px solid rgba(255,255,255,.07);}
+.stat-i:last-child{border-right:none;}
+.stat-n{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:400;color:var(--gold-l);line-height:1;margin-bottom:.4rem;}
+.stat-l{font-size:.72rem;color:rgba(255,255,255,.45);letter-spacing:.08em;text-transform:uppercase;}
+
+.srv-g{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem;}
+.srv-c{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:2.2rem;transition:all .22s cubic-bezier(.16,1,.3,1);}
+.srv-c:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--gold-l);}
+.srv-ico{width:42px;height:42px;background:var(--gold-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);margin-bottom:1.4rem;}
+.srv-t{font-size:1.05rem;font-weight:600;margin-bottom:.7rem;color:var(--ink);}
+.srv-d{font-size:.84rem;color:var(--muted);line-height:1.75;font-weight:300;}
+
+/* CATALOGUE */
+.cat-filters{display:flex;gap:.5rem;flex-wrap:wrap;margin:2.5rem 0;}
+.flt{font-size:.75rem;letter-spacing:.06em;font-weight:500;padding:.5rem 1.2rem;border-radius:6px;border:1.5px solid var(--border);background:var(--white);color:var(--muted);cursor:pointer;transition:all .18s;font-family:'Outfit',sans-serif;}
+.flt:hover,.flt.on{background:var(--ink);color:#fff;border-color:var(--ink);}
+.cat-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.prd{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .22s cubic-bezier(.16,1,.3,1);cursor:pointer;display:flex;flex-direction:column;text-decoration:none;color:inherit;}
+.prd:hover{transform:translateY(-4px);box-shadow:var(--sh2);}
+.prd-img{background:var(--bg2);aspect-ratio:4/3;overflow:hidden;position:relative;}
+.prd-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s cubic-bezier(.16,1,.3,1);}
+.prd:hover .prd-img img{transform:scale(1.04);}
+.ptag{position:absolute;top:.9rem;left:.9rem;font-size:.63rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:.3rem .7rem;border-radius:4px;}
+.tnew{background:var(--ink);color:#fff;}
+.tpromo{background:var(--red);color:#fff;}
+.tess{background:var(--gold-bg);color:var(--gold);}
+.prd-info{padding:1.4rem 1.5rem;flex:1;display:flex;flex-direction:column;}
+.prd-brand{font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:.35rem;}
+.prd-name{font-size:.98rem;font-weight:600;color:var(--ink);margin-bottom:.25rem;}
+.prd-model{font-size:.78rem;color:var(--muted);margin-bottom:.85rem;font-weight:300;}
+.prd-bot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.prd-price{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:400;color:var(--ink);}
+.prd-promo{display:flex;flex-direction:column;}
+.p-old{font-size:.75rem;color:var(--muted);text-decoration:line-through;}
+.p-new{color:var(--red);font-family:'Playfair Display',serif;font-size:1.05rem;}
+.prd-cta{font-size:.7rem;letter-spacing:.08em;font-weight:600;text-transform:uppercase;color:var(--gold);display:flex;align-items:center;gap:.3rem;transition:gap .2s;}
+.prd:hover .prd-cta{gap:.6rem;}
+.dots{display:flex;gap:.4rem;margin-bottom:.85rem;}
+.dot{width:14px;height:14px;border-radius:50%;border:1.5px solid var(--border);}
+.cat-more{text-align:center;margin-top:3.5rem;}
+
+/* MARQUES PAGE */
+.brands-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.5rem;margin-top:3rem;}
+.brand-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:2rem 1.5rem;text-align:center;transition:all .22s cubic-bezier(.16,1,.3,1);cursor:default;}
+.brand-card:hover{transform:translateY(-3px);box-shadow:var(--sh2);border-color:var(--gold-l);}
+.brand-card-name{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);margin-bottom:.4rem;}
+.brand-card-cat{font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:600;}
+.brand-card-desc{font-size:.78rem;color:var(--muted);line-height:1.6;margin-top:.6rem;font-weight:300;}
+
+.ab-g{display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center;}
+.ab-iw{position:relative;}
+.ab-img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:var(--r);filter:saturate(.9);}
+.ab-badge{position:absolute;bottom:-1.5rem;right:-1.5rem;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:1.4rem 1.8rem;box-shadow:var(--sh);text-align:center;}
+.ab-bl{font-size:.7rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;margin-top:.2rem;}
+.ab-pts{list-style:none;margin:2rem 0;display:flex;flex-direction:column;gap:1rem;}
+.ab-pts li{display:flex;align-items:flex-start;gap:1rem;font-size:.9rem;color:var(--ink2);line-height:1.65;}
+.ab-pts li::before{content:'';width:18px;height:18px;flex-shrink:0;background:var(--gold-bg) url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4L3.5 6.5L9 1' stroke='%238B6914' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center/10px no-repeat;border:1px solid rgba(139,105,20,.2);border-radius:50%;margin-top:3px;}
+
+.brands-sec{background:var(--bg2);padding:3rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;}
+.mq{display:flex;gap:3.5rem;animation:mq 22s linear infinite;width:max-content;}
+.mq-i{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--muted);white-space:nowrap;letter-spacing:.08em;}
+.mq-s{color:var(--gold-l);font-size:.55rem;align-self:center;}
+@keyframes mq{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+.proc-g{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-top:3.5rem;}
+.proc-s{padding:2.5rem 2rem;border-right:1px solid var(--border);background:var(--white);transition:background .22s;}
+.proc-s:last-child{border-right:none;}
+.proc-s:hover{background:var(--gold-bg);}
+.proc-n{font-family:'Playfair Display',serif;font-size:2.2rem;color:var(--border2);line-height:1;margin-bottom:1.25rem;font-weight:400;}
+.proc-t{font-size:.9rem;font-weight:600;color:var(--ink);margin-bottom:.65rem;}
+.proc-d{font-size:.8rem;color:var(--muted);line-height:1.7;font-weight:300;}
+
+.test-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+.test-c{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:2rem;transition:all .22s;}
+.test-c:hover{transform:translateY(-2px);box-shadow:var(--sh2);}
+.t-stars{display:flex;gap:2px;margin-bottom:1.1rem;}
+.t-stars span{color:var(--gold);font-size:.8rem;}
+.t-txt{font-size:.9rem;color:var(--ink2);line-height:1.75;font-style:italic;margin-bottom:1.5rem;}
+.t-auth{display:flex;align-items:center;gap:.75rem;}
+.t-av{width:38px;height:38px;border-radius:50%;background:var(--bg2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:600;color:var(--gold);}
+.t-nm{font-size:.83rem;font-weight:600;color:var(--ink);}
+.t-mt{font-size:.72rem;color:var(--muted);}
+
+.blog-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+.blog-c{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:all .22s;text-decoration:none;color:inherit;display:flex;flex-direction:column;}
+.blog-c:hover{transform:translateY(-3px);box-shadow:var(--sh2);}
+.blog-img{aspect-ratio:16/9;overflow:hidden;background:var(--bg2);}
+.blog-img img{width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+.blog-c:hover .blog-img img{transform:scale(1.04);}
+.blog-b{padding:1.5rem;flex:1;display:flex;flex-direction:column;}
+.blog-cat{font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold);margin-bottom:.6rem;}
+.blog-tit{font-size:1rem;font-weight:600;color:var(--ink);line-height:1.4;margin-bottom:.6rem;}
+.blog-ex{font-size:.82rem;color:var(--muted);line-height:1.7;font-weight:300;margin-bottom:1.2rem;flex:1;}
+.blog-mt{font-size:.72rem;color:var(--muted);display:flex;align-items:center;gap:.5rem;margin-top:auto;}
+.blog-sep{width:3px;height:3px;background:var(--border2);border-radius:50%;}
+
+.info-g{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem;}
+.info-c{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:2rem;display:flex;align-items:flex-start;gap:1.2rem;}
+.info-ico{width:44px;height:44px;flex-shrink:0;background:var(--gold-bg);border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--gold);}
+.info-t{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:.5rem;}
+.info-d{font-size:.82rem;color:var(--muted);line-height:1.7;font-weight:300;}
+.info-d a{color:var(--gold);}
+
+.rdv-sec{background:var(--ink);color:#fff;}
+.rdv-in{display:grid;grid-template-columns:1fr 1fr;}
+.rdv-l{padding:5.5rem 4rem 5.5rem 2.5rem;}
+.rdv-r{background:rgba(255,255,255,.04);border-left:1px solid rgba(255,255,255,.08);padding:4rem 2.5rem;}
+.rdv-h2{font-size:clamp(2rem,3vw,3rem);color:#fff;margin-bottom:1.2rem;}
+.rdv-h2 em{color:var(--gold-l);}
+.rdv-p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.8;font-weight:300;margin-bottom:2.5rem;}
+.rdv-hrs{display:flex;flex-direction:column;}
+.rdv-hr{display:flex;justify-content:space-between;padding:.8rem 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.85rem;}
+.rdv-hr span:first-child{color:rgba(255,255,255,.85);}
+.rdv-hr span:last-child{color:rgba(255,255,255,.4);}
+.rdv-ft{font-family:'Playfair Display',serif;font-size:1.5rem;color:#fff;margin-bottom:.4rem;}
+.rdv-fs{font-size:.8rem;color:rgba(255,255,255,.35);margin-bottom:2rem;}
+.flbl{display:block;font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.5rem;font-weight:600;}
+.finp{width:100%;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);color:#fff;padding:.85rem 1rem;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:300;border-radius:6px;outline:none;transition:border-color .18s;-webkit-appearance:none;}
+.finp:focus{border-color:var(--gold-l);}
+.finp option{background:var(--ink2);}
+.fg{margin-bottom:1.1rem;}
+.fr{display:grid;grid-template-columns:1fr 1fr;gap:.9rem;}
+.fta{min-height:80px;resize:none;}
+.fsub{width:100%;margin-top:.5rem;background:var(--gold-l);color:var(--ink);border:none;padding:1rem;font-family:'Outfit',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;border-radius:6px;cursor:pointer;transition:all .22s;}
+.fsub:hover{background:#dbc085;transform:translateY(-1px);}
+
+footer{background:#111110;color:#fff;padding:4.5rem 0 2rem;border-top:1px solid rgba(255,255,255,.06);}
+.ft-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3.5rem;padding-bottom:3.5rem;border-bottom:1px solid rgba(255,255,255,.06);}
+.ft-logo{font-family:'Playfair Display',serif;font-size:1.15rem;color:#fff;margin-bottom:.9rem;}
+.ft-logo span{color:var(--gold-l);}
+.ft-d{font-size:.82rem;color:rgba(255,255,255,.32);line-height:1.8;font-weight:300;max-width:260px;margin-bottom:1.8rem;}
+.ft-soc{display:flex;gap:.6rem;}
+.ft-sl{width:34px;height:34px;border-radius:6px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.38);transition:all .18s;}
+.ft-sl:hover{border-color:var(--gold-l);color:var(--gold-l);}
+.ft-ct{font-size:.64rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;color:var(--gold-l);margin-bottom:1.2rem;}
+.ft-ls{list-style:none;display:flex;flex-direction:column;gap:.65rem;}
+.ft-ls a{font-size:.82rem;color:rgba(255,255,255,.38);transition:color .18s;font-weight:300;}
+.ft-ls a:hover{color:rgba(255,255,255,.82);}
+.ft-bot{padding-top:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;}
+.ft-cp{font-size:.72rem;color:rgba(255,255,255,.2);}
+.ft-leg{display:flex;gap:1.5rem;}
+.ft-leg a{font-size:.72rem;color:rgba(255,255,255,.2);transition:color .18s;}
+.ft-leg a:hover{color:rgba(255,255,255,.5);}
+
+/* CHATBOT */
+.chat-b{position:fixed;bottom:1.75rem;right:1.75rem;z-index:9000;}
+.chat-tog{width:58px;height:58px;background:var(--ink);border:none;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;color:#fff;box-shadow:0 4px 20px rgba(26,25,23,.22);transition:transform .2s,box-shadow .2s;position:relative;}
+.chat-tog:hover{transform:scale(1.06);box-shadow:0 6px 30px rgba(26,25,23,.28);}
+.chat-dot{position:absolute;top:2px;right:2px;width:13px;height:13px;background:#3ECF8E;border-radius:50%;border:2px solid #fff;}
+.chat-dot::after{content:'';position:absolute;inset:-2px;background:#3ECF8E;border-radius:50%;animation:cping 2s ease-in-out infinite;}
+.chat-win{position:absolute;bottom:72px;right:0;width:340px;background:var(--white);border:1px solid var(--border);border-radius:14px;box-shadow:0 12px 48px rgba(26,25,23,.14);display:none;flex-direction:column;overflow:hidden;}
+.chat-win.open{display:flex;animation:cop .22s cubic-bezier(.16,1,.3,1);}
+@keyframes cop{from{opacity:0;transform:scale(.92);}to{opacity:1;transform:scale(1);}}
+.chat-hd{background:var(--ink);color:#fff;padding:1.1rem 1.3rem;display:flex;align-items:center;gap:.9rem;}
+.chat-av{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.12);display:flex;align-items:center;justify-content:center;font-size:.85rem;font-weight:600;}
+.chat-nm{font-size:.88rem;font-weight:600;}
+.chat-st{font-size:.7rem;color:#3ECF8E;display:flex;align-items:center;gap:3px;}
+.chat-st::before{content:'';width:5px;height:5px;background:#3ECF8E;border-radius:50%;}
+.chat-cl{margin-left:auto;background:none;border:none;color:rgba(255,255,255,.6);cursor:pointer;font-size:1.3rem;line-height:1;padding:2px;}
+.chat-msgs{height:240px;overflow-y:auto;padding:1.2rem;display:flex;flex-direction:column;gap:.75rem;background:var(--bg);}
+.chat-msgs::-webkit-scrollbar{width:4px;}
+.chat-msgs::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+.msg{max-width:84%;font-size:.82rem;line-height:1.55;padding:.7rem 1rem;border-radius:12px;}
+.msg-bot{background:var(--white);border:1px solid var(--border);align-self:flex-start;color:var(--ink);border-radius:4px 12px 12px 12px;}
+.msg-usr{background:var(--ink);color:#fff;align-self:flex-end;border-radius:12px 4px 12px 12px;}
+.typing{display:flex;gap:4px;align-items:center;padding:.7rem 1rem;}
+.typing span{width:6px;height:6px;background:var(--border2);border-radius:50%;animation:tdot 1.2s ease-in-out infinite;}
+.typing span:nth-child(2){animation-delay:.2s;}
+.typing span:nth-child(3){animation-delay:.4s;}
+.chat-qk{padding:.9rem 1.2rem;display:flex;flex-wrap:wrap;gap:.45rem;background:var(--white);border-top:1px solid var(--border);}
+.qk-btn{font-size:.72rem;padding:.4rem .85rem;border:1px solid var(--border);border-radius:20px;background:var(--bg);color:var(--muted);cursor:pointer;transition:all .15s;font-family:'Outfit',sans-serif;}
+.qk-btn:hover{border-color:var(--ink);color:var(--ink);}
+.chat-inp-w{display:flex;gap:.5rem;padding:.9rem;border-top:1px solid var(--border);background:var(--white);}
+.chat-inp{flex:1;border:1px solid var(--border);border-radius:8px;padding:.6rem .9rem;font-family:'Outfit',sans-serif;font-size:.82rem;color:var(--ink);background:var(--bg);outline:none;transition:border-color .18s;}
+.chat-inp:focus{border-color:var(--ink);}
+.chat-snd{width:36px;height:36px;background:var(--ink);border:none;border-radius:8px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .18s;}
+.chat-snd:hover{background:var(--ink2);}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1);}
+.reveal.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+
+@keyframes cping{0%,100%{transform:scale(1);opacity:.8;}70%{transform:scale(2.2);opacity:0;}}
+@keyframes tdot{0%,60%,100%{transform:translateY(0);}30%{transform:translateY(-5px);}}
+
+@media(max-width:1100px){
+  .nav-links,.nav-links .nc{display:none;}
+  .nav-search{display:none;}
+  .hbg{display:flex;}
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-vis{height:55vw;min-height:280px;}
+  .hero-body{padding:3rem 2.5rem;}
+  .srv-g{grid-template-columns:repeat(2,1fr);}
+  .ab-g{grid-template-columns:1fr;gap:3rem;}
+  .ab-badge{right:1rem;bottom:-1rem;}
+  .cat-g{grid-template-columns:repeat(2,1fr);}
+  .proc-g{grid-template-columns:repeat(2,1fr);}
+  .proc-s:nth-child(2){border-right:none;}
+  .proc-s:nth-child(1),.proc-s:nth-child(2){border-bottom:1px solid var(--border);}
+  .test-g{grid-template-columns:repeat(2,1fr);}
+  .test-g .test-c:last-child{display:none;}
+  .blog-g{grid-template-columns:repeat(2,1fr);}
+  .blog-g .blog-c:last-child{display:none;}
+  .info-g{grid-template-columns:1fr;}
+  .stats-g{grid-template-columns:repeat(2,1fr);}
+  .rdv-in{grid-template-columns:1fr;}
+  .rdv-l{padding:4rem 2.5rem;}
+  .rdv-r{border-left:none;border-top:1px solid rgba(255,255,255,.08);}
+  .ft-g{grid-template-columns:1fr 1fr;gap:2.5rem;}
+  .brands-grid{grid-template-columns:repeat(3,1fr);}
+}
+@media(max-width:640px){
+  .ctr{padding:0 1.25rem;}
+  .sp{padding:4.5rem 0;}
+  .hero-body{padding:2.5rem 1.25rem;}
+  .hero-vis{height:60vw;}
+  .hero-acts{flex-direction:column;align-items:flex-start;}
+  .srv-g,.cat-g,.proc-g{grid-template-columns:1fr;}
+  .proc-s{border-right:none !important;border-bottom:1px solid var(--border);}
+  .test-g,.blog-g{grid-template-columns:1fr;}
+  .test-g .test-c:last-child{display:flex;}
+  .blog-g .blog-c:last-child{display:flex;}
+  .cat-filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:.5rem;}
+  .ft-g{grid-template-columns:1fr;gap:2rem;}
+  .ft-bot{flex-direction:column;text-align:center;}
+  .fr{grid-template-columns:1fr;}
+  .stats-g{grid-template-columns:repeat(2,1fr);}
+  .chat-win{width:300px;}
+  .promo{font-size:.72rem;padding:.8rem 1rem;}
+  .brands-grid{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="nav-in">
+    <a href="index.html" class="logo">Visioptic <span>Design</span></a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#catalogue">Lunettes</a></li>
+      <li><a href="#marques">Marques</a></li>
+      <li><a href="#expertise">Boutique</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="actualites.html">Actualités</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="nc"><a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="btn btn-dark">Prendre RDV</a></li>
+    </ul>
+    <div class="nav-search" id="navSearch">
+      <svg class="nav-search-ico" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Rechercher marque, modèle…" autocomplete="off" oninput="liveSearch(this.value)" onfocus="liveSearch(this.value)" onblur="setTimeout(()=>closeSearch(),200)">
+      <div class="search-results" id="searchResults"></div>
+    </div>
+    <button class="hbg" id="hbg" onclick="togMenu()" aria-label="Menu">
+      <span id="h1"></span><span id="h2"></span><span id="h3"></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mob-menu" id="mobMenu">
+  <a href="#services" onclick="closeMenu()">Services</a>
+  <a href="#catalogue" onclick="closeMenu()">Lunettes</a>
+  <a href="#marques" onclick="closeMenu()">Marques</a>
+  <a href="#expertise" onclick="closeMenu()">Notre boutique</a>
+  <a href="#avis" onclick="closeMenu()">Avis clients</a>
+  <a href="actualites.html" onclick="closeMenu()">Actualités</a>
+  <a href="#contact" onclick="closeMenu()">Contact</a>
+  <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="mob-cta-btn" onclick="closeMenu()">Prendre rendez-vous</a>
+</div>
+
+<div class="promo">
+  <strong>Promotion — 40% sur les optiques &amp; 25% sur les solaires*</strong> &nbsp;·&nbsp; Valable en boutique sur sélection
+</div>
+
+<main>
+<section class="hero">
+  <div class="hero-body">
+    <div class="eyebrow">Opticien indépendant — Deuil-la-Barre (95)</div>
+    <h1 class="hero-h1">L'optique pensée<br>pour <em>vous,</em><br>sur mesure.</h1>
+    <p class="hero-sub">Bilan visuel complet, montures de créateurs et lentilles de contact. Un conseil humain, sans pression commerciale, pour toute la famille.</p>
+    <div class="hero-chips">
+      <span class="chip">Expert Santé Visuelle</span>
+      <span class="chip">Opticiens Par Conviction</span>
+      <span class="chip">Tiers payant accepté</span>
+    </div>
+    <div class="hero-acts">
+      <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="btn btn-dark">Prendre rendez-vous</a>
+      <a href="#catalogue" class="btn btn-out">Voir le catalogue</a>
+    </div>
+    <div class="hero-tel">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <a href="tel:+33134059651" style="color:var(--muted);font-weight:300;">01 34 05 96 51</a>
+    </div>
+  </div>
+  <div class="hero-vis">
+    <img src="https://picsum.photos/seed/optician-bright-shop/800/900" alt="Boutique Visioptic Design Deuil-la-Barre opticien" onerror="this.style.display='none'">
+    <div class="hero-vis-fade"></div>
+    <div class="hero-fc">
+      <div class="hero-fn">+ 15</div>
+      <div class="hero-fl">ans d'expérience</div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="ctr">
+    <div class="stats-g">
+      <div class="stat-i reveal"><div class="stat-n">2 000+</div><div class="stat-l">Patients accompagnés</div></div>
+      <div class="stat-i reveal d1"><div class="stat-n">4.9/5</div><div class="stat-l">Note Google</div></div>
+      <div class="stat-i reveal d2"><div class="stat-n">150+</div><div class="stat-l">Modèles en boutique</div></div>
+      <div class="stat-i reveal d3"><div class="stat-n">48h</div><div class="stat-l">Délai de traitement</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="sp" id="services">
+  <div class="ctr">
+    <div class="eyebrow reveal">Nos prestations</div>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,3.5vw,3rem);">Tout pour votre<br><em style="color:var(--gold);">confort visuel</em></h2>
+    <div class="srv-g">
+      <div class="srv-c reveal">
+        <div class="srv-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/></svg></div>
+        <div class="srv-t">Examen de vue</div>
+        <div class="srv-d">Bilan visuel complet avec équipements de précision. Résultats expliqués clairement, ordonnance remise en main propre.</div>
+      </div>
+      <div class="srv-c reveal d1">
+        <div class="srv-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="6" width="20" height="12" rx="5"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <div class="srv-t">Montures & Verres</div>
+        <div class="srv-d">Sélection de montures pour tous les styles et budgets. Verres antireflet, progressifs, solaires taillés sur mesure.</div>
+      </div>
+      <div class="srv-c reveal d2">
+        <div class="srv-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg></div>
+        <div class="srv-t">Lentilles de contact</div>
+        <div class="srv-d">Adaptation professionnelle et essai gratuit. Lentilles journalières, mensuelles ou toriques selon votre correction.</div>
+      </div>
+      <div class="srv-c reveal d3">
+        <div class="srv-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="srv-t">Tiers payant & Mutuelle</div>
+        <div class="srv-d">Prise en charge directe avec votre mutuelle. Nous gérons les démarches administratives pour vous.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATALOGUE LUNETTES -->
+<section class="sp" id="catalogue" style="background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="ctr">
+    <div class="eyebrow reveal">Notre sélection</div>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,3.5vw,3rem);">Catalogue <em style="color:var(--gold);">lunettes</em></h2>
+    <p class="reveal d2" style="color:var(--muted);font-size:.9rem;max-width:520px;margin-top:.75rem;font-weight:300;line-height:1.75;">Cliquez sur un modèle pour accéder à la fiche complète avec tous les détails.</p>
+    <div class="cat-filters reveal">
+      <button class="flt on" onclick="filterCat('all',this)">Tous</button>
+      <button class="flt" onclick="filterCat('optique',this)">Optiques</button>
+      <button class="flt" onclick="filterCat('solaire',this)">Solaires</button>
+      <button class="flt" onclick="filterCat('homme',this)">Homme</button>
+      <button class="flt" onclick="filterCat('femme',this)">Femme</button>
+      <button class="flt" onclick="filterCat('mixte',this)">Mixte</button>
+    </div>
+    <div class="cat-g" id="catGrid"></div>
+    <div class="cat-more reveal">
+      <p style="font-size:.85rem;color:var(--muted);margin-bottom:1.2rem;">D'autres modèles disponibles en boutique. Venez essayer.</p>
+      <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="btn btn-dark">Demander un essai en boutique</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUES -->
+<section class="sp" id="marques">
+  <div class="ctr">
+    <div class="eyebrow reveal">Nos partenaires</div>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,3.5vw,3rem);">Les <em style="color:var(--gold);">marques</em> que nous proposons</h2>
+    <p class="reveal d2" style="color:var(--muted);font-size:.9rem;max-width:540px;margin-top:.75rem;font-weight:300;line-height:1.75;">Nous sélectionnons rigoureusement chaque marque pour vous garantir qualité, style et durabilité.</p>
+    <div class="brands-grid">
+      <div class="brand-card reveal"><div class="brand-card-name">Ray-Ban</div><div class="brand-card-cat">Optique & Solaire</div><div class="brand-card-desc">Icônes intemporelles depuis 1937. Exclusivité Ray-Ban Stories dans notre boutique.</div></div>
+      <div class="brand-card reveal d1"><div class="brand-card-name">Silhouette</div><div class="brand-card-cat">Optique premium</div><div class="brand-card-desc">La monture la plus légère au monde. Titan pur, sans charnière, made in Austria.</div></div>
+      <div class="brand-card reveal d2"><div class="brand-card-name">Oakley</div><div class="brand-card-cat">Sport & Solaire</div><div class="brand-card-desc">Performance et protection pour un style actif. Verres Prizm polarisés.</div></div>
+      <div class="brand-card reveal d3"><div class="brand-card-name">Persol</div><div class="brand-card-cat">Optique & Solaire</div><div class="brand-card-desc">Artisanat italien d'excellence. Charnière Meflecto® brevetée, confort absolu.</div></div>
+      <div class="brand-card reveal d4"><div class="brand-card-name">Lindberg</div><div class="brand-card-cat">Luxe & Sur mesure</div><div class="brand-card-desc">Design danois haut de gamme. Personnalisation complète selon votre visage.</div></div>
+      <div class="brand-card reveal"><div class="brand-card-name">Tom Ford</div><div class="brand-card-cat">Luxe & Solaire</div><div class="brand-card-desc">Élégance italienne contemporaine. Les modèles signatures de la mode internationale.</div></div>
+      <div class="brand-card reveal d1"><div class="brand-card-name">Chloé</div><div class="brand-card-cat">Femme</div><div class="brand-card-desc">Montures féminines sophistiquées. Acétate premium, formes iconiques.</div></div>
+      <div class="brand-card reveal d2"><div class="brand-card-name">Maui Jim</div><div class="brand-card-cat">Solaire premium</div><div class="brand-card-desc">PolarizedPlus2® : la meilleure protection solaire du marché. UV400 + infrarouge.</div></div>
+      <div class="brand-card reveal d3"><div class="brand-card-name">Cartier</div><div class="brand-card-cat">Joaillerie optique</div><div class="brand-card-desc">L'alliance de la joaillerie et de l'optique. Prestige et raffinement absolu.</div></div>
+      <div class="brand-card reveal d4"><div class="brand-card-name">Burberry</div><div class="brand-card-cat">Optique & Solaire</div><div class="brand-card-desc">L'élégance britannique en montures. Collections exclusives chaque saison.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="brands-sec">
+  <div class="mq">
+    <span class="mq-i">Ray-Ban</span><span class="mq-s">◆</span><span class="mq-i">Silhouette</span><span class="mq-s">◆</span><span class="mq-i">Oakley</span><span class="mq-s">◆</span><span class="mq-i">Persol</span><span class="mq-s">◆</span><span class="mq-i">Lindberg</span><span class="mq-s">◆</span><span class="mq-i">Cartier</span><span class="mq-s">◆</span><span class="mq-i">Tom Ford</span><span class="mq-s">◆</span><span class="mq-i">Maui Jim</span><span class="mq-s">◆</span><span class="mq-i">Chloé</span><span class="mq-s">◆</span><span class="mq-i">Burberry</span><span class="mq-s">◆</span>
+    <span class="mq-i">Ray-Ban</span><span class="mq-s">◆</span><span class="mq-i">Silhouette</span><span class="mq-s">◆</span><span class="mq-i">Oakley</span><span class="mq-s">◆</span><span class="mq-i">Persol</span><span class="mq-s">◆</span><span class="mq-i">Lindberg</span><span class="mq-s">◆</span><span class="mq-i">Cartier</span><span class="mq-s">◆</span><span class="mq-i">Tom Ford</span><span class="mq-s">◆</span><span class="mq-i">Maui Jim</span><span class="mq-s">◆</span><span class="mq-i">Chloé</span><span class="mq-s">◆</span><span class="mq-i">Burberry</span><span class="mq-s">◆</span>
+  </div>
+</div>
+
+<section class="sp" id="expertise">
+  <div class="ctr">
+    <div class="ab-g">
+      <div class="ab-iw reveal">
+        <img class="ab-img" src="https://picsum.photos/seed/optician-interior-warm/600/750" alt="Intérieur boutique Visioptic Design Deuil-la-Barre opticien indépendant" onerror="this.style.background='var(--bg2)'">
+        <div class="ab-badge">
+          <div style="font-family:'Playfair Display',serif;font-size:.78rem;font-style:italic;color:var(--gold);">Certifié</div>
+          <div style="font-size:.7rem;font-weight:700;color:var(--ink);letter-spacing:.06em;text-transform:uppercase;margin-top:.2rem;">Expert Santé<br>Visuelle</div>
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow reveal">Notre boutique</div>
+        <h2 class="reveal d1" style="font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:1.2rem;">Un opticien indépendant<br><em style="color:var(--gold);">à votre écoute</em></h2>
+        <p class="reveal d2" style="color:var(--muted);font-size:.9rem;line-height:1.8;font-weight:300;margin-bottom:1.5rem;">Situé au cœur de Deuil-la-Barre, Visioptic Design est un opticien indépendant qui privilégie la qualité du conseil. Pas de rush, pas de pression — juste le bon équipement pour votre vue.</p>
+        <ul class="ab-pts reveal d2">
+          <li>Label <strong>Expert en Santé Visuelle</strong> — bilan visuel approfondi</li>
+          <li>Membre du réseau <strong>Opticiens Par Conviction</strong></li>
+          <li>Exclusivité <strong>Ray-Ban Stories</strong> dans le secteur</li>
+          <li>Devis gratuit, tiers payant, remboursement mutuelle</li>
+        </ul>
+        <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="btn btn-dark reveal d3">Prendre rendez-vous</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sp" style="background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="ctr">
+    <div class="eyebrow reveal" style="justify-content:center;">Votre parcours</div>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,3.5vw,3rem);text-align:center;">En 4 étapes simples</h2>
+    <div class="proc-g">
+      <div class="proc-s reveal"><div class="proc-n">01</div><div class="proc-t">Prise de RDV</div><div class="proc-d">En ligne, par téléphone ou en boutique. Créneaux disponibles du lundi au samedi.</div></div>
+      <div class="proc-s reveal d1"><div class="proc-n">02</div><div class="proc-t">Bilan visuel</div><div class="proc-d">Examen complet, explications claires, ordonnance remise immédiatement si nécessaire.</div></div>
+      <div class="proc-s reveal d2"><div class="proc-n">03</div><div class="proc-t">Choix de la monture</div><div class="proc-d">Conseil selon votre morphologie, style et budget. Essayage libre, sans pression.</div></div>
+      <div class="proc-s reveal d3"><div class="proc-n">04</div><div class="proc-t">Livraison & réglage</div><div class="proc-d">Remise en main propre, réglage précis et suivi inclus. Ajustements gratuits.</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="sp" id="avis">
+  <div class="ctr">
+    <div class="eyebrow reveal" style="justify-content:center;">Avis clients</div>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,3.5vw,3rem);text-align:center;margin-bottom:.5rem;">Ce qu'ils disent</h2>
+    <p class="reveal d2" style="text-align:center;color:var(--muted);font-size:.85rem;">Note moyenne : <strong style="color:var(--gold);">4.9/5</strong> — 127 avis Google vérifiés</p>
+    <div class="test-g">
+      <div class="test-c reveal">
+        <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="t-txt">"Accueil formidable et examen sérieux. J'ai trouvé des lunettes qui me correspondent vraiment — première fois en 15 ans. Je reviens sans hésiter."</p>
+        <div class="t-auth"><div class="t-av">ML</div><div><div class="t-nm">Marie L.</div><div class="t-mt">Deuil-la-Barre · 3 ans de fidélité</div></div></div>
+      </div>
+      <div class="test-c reveal d1">
+        <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="t-txt">"Le bilan visuel est vraiment complet. Je vois bien mieux qu'avec mes précédentes lunettes faites ailleurs. Délai de livraison très rapide."</p>
+        <div class="t-auth"><div class="t-av">TD</div><div><div class="t-nm">Thomas D.</div><div class="t-mt">Saint-Denis · Nouveau patient</div></div></div>
+      </div>
+      <div class="test-c reveal d2">
+        <div class="t-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="t-txt">"Toute ma famille est ici depuis 5 ans. Suivi excellent, prix honnêtes, tiers payant bien géré. On est vraiment écoutés, c'est rare."</p>
+        <div class="t-auth"><div class="t-av">SA</div><div><div class="t-nm">Sophie A.</div><div class="t-mt">Montmorency · 5 ans de fidélité</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sp" style="background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="ctr">
+    <div class="eyebrow reveal">Nos articles</div>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,3.5vw,3rem);margin-bottom:.5rem;">Actualités & conseils <em style="color:var(--gold);">optique</em></h2>
+    <p class="reveal d2" style="color:var(--muted);font-size:.9rem;max-width:480px;font-weight:300;line-height:1.75;">Conseils de professionnels, actualités boutique, nouveautés santé visuelle.</p>
+    <div class="blog-g">
+      <a href="actualites.html#verres-polarisants" class="blog-c reveal">
+        <div class="blog-img"><img src="https://picsum.photos/seed/polarized-lens-bright/600/340" alt="Verres polarisants opticien Deuil-la-Barre" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+        <div class="blog-b"><div class="blog-cat">Santé visuelle</div><div class="blog-tit">Verres polarisants : à quoi ça sert vraiment ?</div><div class="blog-ex">Réduire les reflets, améliorer le contraste, protéger vos yeux en voiture ou à la mer — tout ce qu'il faut savoir.</div><div class="blog-mt"><span>4 juillet 2024</span><span class="blog-sep"></span><span>5 min</span></div></div>
+      </a>
+      <a href="actualites.html#montures-progressifs" class="blog-c reveal d1">
+        <div class="blog-img"><img src="https://picsum.photos/seed/progressive-frame-choice/600/340" alt="Choisir monture verres progressifs opticien 95" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+        <div class="blog-b"><div class="blog-cat">Conseils montures</div><div class="blog-tit">Comment choisir sa monture pour des verres progressifs ?</div><div class="blog-ex">Taille du verre, hauteur de montage, matière — les critères techniques que votre opticien doit vérifier.</div><div class="blog-mt"><span>4 juillet 2024</span><span class="blog-sep"></span><span>4 min</span></div></div>
+      </a>
+      <a href="actualites.html#ray-ban-stories" class="blog-c reveal d2">
+        <div class="blog-img"><img src="https://picsum.photos/seed/smart-glasses-bright/600/340" alt="Ray-Ban Stories exclusivité Deuil-la-Barre" loading="lazy" onerror="this.style.background='var(--bg3)'"></div>
+        <div class="blog-b"><div class="blog-cat">Nouveauté</div><div class="blog-tit">Ray-Ban Stories : disponibles en exclusivité chez Visioptic Design</div><div class="blog-ex">Les lunettes connectées Ray-Ban x Meta sont en boutique à Deuil-la-Barre. Venez les tester.</div><div class="blog-mt"><span>15 mars 2024</span><span class="blog-sep"></span><span>3 min</span></div></div>
+      </a>
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;" class="reveal">
+      <a href="actualites.html" class="btn btn-out">Tous les articles →</a>
+    </div>
+  </div>
+</section>
+
+<section class="sp" id="contact">
+  <div class="ctr">
+    <div class="eyebrow reveal" style="justify-content:center;">Informations pratiques</div>
+    <h2 class="reveal d1" style="font-size:clamp(2rem,3.5vw,3rem);text-align:center;">Nous trouver &amp; <em style="color:var(--gold);">nous contacter</em></h2>
+    <div class="info-g">
+      <div class="info-c reveal">
+        <div class="info-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+        <div><div class="info-t">Adresse</div><div class="info-d">1 bis Route de Saint-Denis<br>95170 Deuil-la-Barre<br><a href="https://www.google.com/maps/dir/?api=1&destination=visioptic+design+1+route+de+saint+denis%2C95170%2Cdeuil+la+barre" target="_blank" rel="noopener">Voir sur Google Maps →</a></div></div>
+      </div>
+      <div class="info-c reveal d1">
+        <div class="info-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+        <div><div class="info-t">Téléphone</div><div class="info-d"><a href="tel:+33134059651" style="color:var(--gold);">01 34 05 96 51</a><br>Lun–Sam, 9h–19h<br>Réponse rapide</div></div>
+      </div>
+      <div class="info-c reveal d2">
+        <div class="info-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+        <div><div class="info-t">Horaires</div><div class="info-d">Lundi – Vendredi : 9h – 19h<br>Samedi : 9h – 18h<br>Dimanche : Fermé</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="rdv-sec" id="rdv">
+  <div class="ctr" style="padding-left:0;padding-right:0;max-width:1320px;margin:0 auto;">
+    <div class="rdv-in">
+      <div class="rdv-l">
+        <div class="eyebrow" style="color:var(--gold-l);">Rendez-vous</div>
+        <h2 class="rdv-h2">Réservez votre<br><em>consultation</em></h2>
+        <p class="rdv-p">Prenez rendez-vous directement en ligne via notre plateforme sécurisée, ou appelez-nous directement.</p>
+        <div class="rdv-hrs">
+          <div class="rdv-hr"><span>Lundi – Vendredi</span><span>9h00 – 19h00</span></div>
+          <div class="rdv-hr"><span>Samedi</span><span>9h00 – 18h00</span></div>
+          <div class="rdv-hr"><span>Dimanche</span><span>Fermé</span></div>
+        </div>
+        <a href="tel:+33134059651" style="color:var(--gold-l);font-size:.85rem;display:flex;align-items:center;gap:.5rem;margin-top:2rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.37 2 2 0 0 1 3.59 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          01 34 05 96 51
+        </a>
+      </div>
+      <div class="rdv-r" style="display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4rem 3rem;">
+        <div class="rdv-ft" style="margin-bottom:1rem;">Réservez en ligne</div>
+        <p style="color:rgba(255,255,255,.45);font-size:.88rem;font-weight:300;line-height:1.7;margin-bottom:2.5rem;max-width:320px;">Choisissez votre créneau directement sur notre plateforme de prise de rendez-vous en ligne. Rapide, simple, disponible 24h/24.</p>
+        <a href="https://www.opticiensparconviction.fr/votre-opticien-a-deuil-la-barre/visioptic-design/prise-de-rdv?utm_campaign=appointment&utm_source=factory&utm_term=header" target="_blank" rel="noopener" class="fsub" style="display:inline-block;text-align:center;text-decoration:none;max-width:320px;width:100%;">Choisir mon créneau →</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ctr">
+    <div class="ft-g">
+      <div>
+        <div class="ft-logo">Visioptic <span>Design</span></div>
+        <p class="ft-d">Opticien indépendant à Deuil-la-Barre (Val-d'Oise). Expert en santé visuelle certifié. Conseil personnalisé pour toute la famille.</p>
+        <div class="ft-soc">
+          <a href="#" class="ft-sl" aria-label="Instagram"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="#" class="ft-sl" aria-label="Facebook"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="mailto:senhajitarik@yahoo.fr" class="ft-sl" aria-label="Email"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <div class="ft-ct">Navigation</div>
+        <ul class="ft-ls">
+          <li><a href="#services">Nos services</a></li>
+          <li><a href="#catalogue">Catalogue lunettes</a></li>
+          <li><a href="#marques">Nos marques</a></li>
+          <li><a href="#expertise">Notre boutique</a></li>
+          <li><a href="#avis">Avis clients</a></li>
+          <li><a href="actualites.html">Actualités</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-ct">Services</div>
+        <ul class="ft-ls">
+          <li><a href="#rdv">Examen de vue</a></li>
+          <li><a href="#rdv">Montures & Verres</a></li>
+          <li><a href="#rdv">Lentilles</a></li>
+          <li><a href="#rdv">Solaires</a></li>
+          <li><a href="#rdv">Tiers payant</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-ct">Contact</div>
+        <ul class="ft-ls">
+          <li><a href="tel:+33134059651">01 34 05 96 51</a></li>
+          <li><a href="mailto:senhajitarik@yahoo.fr">senhajitarik@yahoo.fr</a></li>
+          <li><a href="https://www.google.com/maps/dir/?api=1&destination=visioptic+design" target="_blank" rel="noopener">1 bis Rte de Saint-Denis<br>95170 Deuil-la-Barre</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bot">
+      <div class="ft-cp">© 2025 Visioptic Design — Tous droits réservés</div>
+      <div class="ft-leg">
+        <a href="#">Mentions légales</a>
+        <a href="#">Confidentialité</a>
+        <a href="#">CGU</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- CHATBOT -->
+<div class="chat-b">
+  <div class="chat-win" id="chatWin">
+    <div class="chat-hd">
+      <div class="chat-av">V</div>
+      <div><div class="chat-nm">Assistant Visioptic</div><div class="chat-st">En ligne maintenant</div></div>
+      <button class="chat-cl" onclick="togChat()">×</button>
+    </div>
+    <div class="chat-msgs" id="chatMsgs">
+      <div class="msg msg-bot">Bonjour ! Je suis l'assistant de Visioptic Design. Comment puis-je vous aider ?</div>
+    </div>
+    <div class="chat-qk" id="chatQk">
+      <button class="qk-btn" onclick="qr('Prendre un rendez-vous')">Prendre RDV</button>
+      <button class="qk-btn" onclick="qr('Vos horaires ?')">Horaires</button>
+      <button class="qk-btn" onclick="qr('Votre adresse ?')">Adresse</button>
+      <button class="qk-btn" onclick="qr('Lentilles de contact')">Lentilles</button>
+    </div>
+    <div class="chat-inp-w">
+      <input type="text" class="chat-inp" id="chatInp" placeholder="Votre question..." onkeypress="if(event.key==='Enter')sendChatMsg()">
+      <button class="chat-snd" onclick="sendChatMsg()">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+      </button>
+    </div>
+  </div>
+  <button class="chat-tog" onclick="togChat()" aria-label="Chat assistant">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <div class="chat-dot"></div>
+  </button>
+</div>
+
+<script>
+const prods=[
+  {id:1,cat:['optique','femme','mixte'],brand:'Ray-Ban',name:'Clubmaster Classic',model:'RB3016 — Optique mixte',price:'149',tag:'new',tagType:'tnew',img:'https://picsum.photos/seed/clubmaster-glasses/600/450',colors:['#1a1917','#8B6914','#5c4033'],desc:"Un classique intemporel revisité. Monture acétate brow-line idéale pour les visages ovales et carrés.",specs:[{l:'Matière',v:'Acétate + métal'},{l:'Forme',v:'Browline'},{l:'Genre',v:'Mixte'},{l:'Garantie',v:'2 ans'}]},
+  {id:2,cat:['solaire','homme'],brand:'Oakley',name:'Holbrook Polarisé',model:'OO9102 — Solaire sport',price:'189',tag:'',tagType:'',img:'https://picsum.photos/seed/oakley-holbrook/600/450',colors:['#1a1917','#2d4a1e','#5c3333'],desc:"Design sportif et protection maximale. Verres polarisés Prizm pour une clarté de vision inégalée.",specs:[{l:'Matière',v:"O-Matter™"},{l:'Verres',v:'Polarisés Prizm'},{l:'Protection',v:'UV400'},{l:'Genre',v:'Homme'}]},
+  {id:3,cat:['optique','femme'],brand:'Chloé',name:'Palma',model:'CE2748 — Optique femme',price:'229',oldPrice:'329',tag:'promo',tagType:'tpromo',img:'https://picsum.photos/seed/chloe-glasses-feminine/600/450',colors:['#c4a882','#c44b2b','#1a1917'],desc:"Monture papillon sophistiquée. Acétate premium, légère et confortable au quotidien.",specs:[{l:'Matière',v:'Acétate premium'},{l:'Forme',v:'Papillon'},{l:'Genre',v:'Femme'},{l:'Origine',v:'Italie'}]},
+  {id:4,cat:['optique','mixte'],brand:'Silhouette',name:'Titan Minimal Art',model:'SPX+ 2901 — Optique mixte',price:'329',tag:'essentiel',tagType:'tess',img:'https://picsum.photos/seed/silhouette-titan/600/450',colors:['#888','#1a1917','#c9a96e'],desc:"La monture sans charnière la plus légère du monde. Titan pur, zéro vis, zéro compromis.",specs:[{l:'Matière',v:'Titan pur'},{l:'Poids',v:'< 3g'},{l:'Genre',v:'Mixte'},{l:'Origine',v:'Autriche'}]},
+  {id:5,cat:['solaire','mixte'],brand:'Ray-Ban',name:'Stories — Meta',model:'RW4002 — Smart Glasses',price:'299',tag:'new',tagType:'tnew',img:'https://picsum.photos/seed/rayban-stories-meta/600/450',colors:['#1a1917','#3d3c38'],desc:"Lunettes connectées Ray-Ban x Meta. Photos, vidéos, musique, appels — en exclusivité chez Visioptic Design.",specs:[{l:'Technologie',v:'Meta IA intégrée'},{l:'Autonomie',v:"6h"},{l:'Protection',v:'UV400'},{l:'Exclusivité',v:'Secteur 95'}]},
+  {id:6,cat:['solaire','homme'],brand:'Tom Ford',name:'Snowdon',model:'TF237 — Solaire homme',price:'269',tag:'',tagType:'',img:'https://picsum.photos/seed/tomford-sunglasses/600/450',colors:['#8B6914','#1a1917','#c9a96e'],desc:"Élégance italienne. Acétate imposante, verres dégradés fumés. Le modèle signature Tom Ford.",specs:[{l:'Matière',v:'Acétate italienne'},{l:'Verres',v:'Dégradés polarisés'},{l:'Protection',v:'UV400'},{l:'Genre',v:'Homme'}]},
+  {id:7,cat:['optique','femme'],brand:'Persol',name:'Cellor II',model:'PO3007V — Optique',price:'199',tag:'',tagType:'',img:'https://picsum.photos/seed/persol-retro-round/600/450',colors:['#8B6914','#1a1917'],desc:"Monture ronde vintage fabriquée artisanalement en Italie. L'excellence Persol dans un design intemporel.",specs:[{l:'Fabrication',v:'Italie artisanale'},{l:'Charnière',v:'Meflecto® brevetée'},{l:'Forme',v:'Ronde'},{l:'Genre',v:'Femme'}]},
+  {id:8,cat:['optique','homme','mixte'],brand:'Lindberg',name:'Air Titanium',model:'5500 — Optique sur mesure',price:'499',tag:'essentiel',tagType:'tess',img:'https://picsum.photos/seed/lindberg-titanium/600/450',colors:['#888','#c9a96e','#1a1917'],desc:"Haut de gamme danois. Titane aérien sur mesure, fabriqué à la main. Personnalisé selon votre visage.",specs:[{l:'Fabrication',v:'Danemark — sur mesure'},{l:'Matière',v:'Titane aérien'},{l:'Poids',v:'< 5g'},{l:'Genre',v:'Mixte'}]},
+  {id:9,cat:['solaire','femme'],brand:'Maui Jim',name:'Banyans',model:'MJ412 — Solaire femme',price:'239',oldPrice:'299',tag:'promo',tagType:'tpromo',img:'https://picsum.photos/seed/maui-jim-sunglasses/600/450',colors:['#c44b2b','#1a1917','#888'],desc:"Protection solaire conçue pour Hawaï. PolarizedPlus2® élimine 100% des UV avec clarté de couleurs exceptionnelle.",specs:[{l:'Verres',v:'PolarizedPlus2®'},{l:'Protection',v:'UV400 + infrarouge'},{l:'Genre',v:'Femme'},{l:'Garantie',v:'2 ans'}]},
+  {id:10,cat:['optique','homme'],brand:'Cartier',name:'Santos Dumont',model:'CT0275O — Optique',price:'589',tag:'essentiel',tagType:'tess',img:'https://picsum.photos/seed/cartier-santos-optical/600/450',colors:['#c9a96e','#1a1917'],desc:"La joaillerie au service de l'optique. Monture or avec finition platinum, sertie à la main par les artisans Cartier.",specs:[{l:'Matière',v:'Or & platine'},{l:'Fabrication',v:'Paris — artisanal'},{l:'Forme',v:'Carré'},{l:'Genre',v:'Homme'}]},
+  {id:11,cat:['solaire','femme','mixte'],brand:'Chloé',name:'Esther',model:'CH0009S — Solaire femme',price:'259',tag:'new',tagType:'tnew',img:'https://picsum.photos/seed/chloe-esther-sunglasses/600/450',colors:['#c4a882','#1a1917','#5c3333'],desc:"Papillon graphique et féminité affirmée. Verres dégradés, acétate bio-sourcée, protection UV400.",specs:[{l:'Matière',v:'Acétate bio-sourcée'},{l:'Forme',v:'Papillon'},{l:'Protection',v:'UV400'},{l:'Genre',v:'Femme'}]},
+  {id:12,cat:['optique','mixte'],brand:'Burberry',name:'Heritage BE2378',model:'BE2378 — Optique mixte',price:'219',tag:'',tagType:'',img:'https://picsum.photos/seed/burberry-heritage-optical/600/450',colors:['#5c3d2e','#1a1917','#888'],desc:"L'élégance britannique en optique. Acétate avec motif carreaux iconique Burberry, charnières métal poli.",specs:[{l:'Matière',v:'Acétate + métal'},{l:'Motif',v:'Burberry Heritage'},{l:'Forme',v:'Rectangulaire'},{l:'Origine',v:'Italie'}]}
+];
+
+let activeFilter='all';
+
+function renderCat(){
+  const g=document.getElementById('catGrid');
+  const list=activeFilter==='all'?prods:prods.filter(p=>p.cat.includes(activeFilter));
+  g.innerHTML=list.map(p=>`
+    <a href="produit.html?id=${p.id}" class="prd reveal" aria-label="Voir ${p.name}">
+      <div class="prd-img">
+        <img src="${p.img}" alt="${p.brand} ${p.name} opticien Deuil-la-Barre" loading="lazy" onerror="this.style.background='var(--bg3)'">
+        ${p.tag?`<span class="ptag ${p.tagType}">${p.tag==='new'?'Nouveau':p.tag==='promo'?'Promo':'Essentiel'}</span>`:''}
+      </div>
+      <div class="prd-info">
+        <div class="prd-brand">${p.brand}</div>
+        <div class="prd-name">${p.name}</div>
+        <div class="prd-model">${p.model}</div>
+        <div class="dots">${p.colors.map(c=>`<span class="dot" style="background:${c}"></span>`).join('')}</div>
+        <div class="prd-bot">
+          ${p.oldPrice?`<div class="prd-promo"><span class="p-old">${p.oldPrice}€</span><span class="p-new">${p.price}€</span></div>`:`<div class="prd-price">${p.price}€</div>`}
+          <span class="prd-cta">Voir la fiche <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </div>
+    </a>`).join('');
+  g.querySelectorAll('.prd').forEach(el=>ro.observe(el));
+}
+
+function filterCat(f,btn){
+  activeFilter=f;
+  document.querySelectorAll('.flt').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderCat();
+}
+
+// LIVE SEARCH
+function liveSearch(v){
+  const box=document.getElementById('searchResults');
+  if(!v||v.length<2){box.classList.remove('show');return;}
+  const q=v.toLowerCase();
+  const matches=prods.filter(p=>p.brand.toLowerCase().includes(q)||p.name.toLowerCase().includes(q)||p.model.toLowerCase().includes(q)).slice(0,5);
+  if(!matches.length){box.innerHTML='<div class="search-no">Aucun résultat pour "'+v+'"</div>';box.classList.add('show');return;}
+  box.innerHTML=matches.map(p=>`<div class="search-item" onclick="window.location='produit.html?id=${p.id}'">
+    <img class="search-item-img" src="${p.img}" alt="${p.name}" onerror="this.style.background='var(--bg3)'">
+    <div class="search-item-info">
+      <div class="search-item-brand">${p.brand}</div>
+      <div class="search-item-name">${p.name}</div>
+    </div>
+    <div class="search-item-price">${p.price}€</div>
+  </div>`).join('');
+  box.classList.add('show');
+}
+function closeSearch(){document.getElementById('searchResults').classList.remove('show');}
+
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('shadow',window.scrollY>30);});
+
+let mOpen=false;
+function togMenu(){
+  mOpen=!mOpen;
+  document.getElementById('mobMenu').classList.toggle('open',mOpen);
+  const h1=document.getElementById('h1'),h2=document.getElementById('h2'),h3=document.getElementById('h3');
+  if(mOpen){h1.style.transform='rotate(45deg) translate(4px,5px)';h2.style.opacity='0';h3.style.transform='rotate(-45deg) translate(4px,-5px)';}
+  else{h1.style.transform='';h2.style.opacity='1';h3.style.transform='';}
+}
+function closeMenu(){mOpen=true;togMenu();}
+
+const ro=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');ro.unobserve(e.target);}});},{threshold:.07,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+
+let chatOpen=false;
+const answers={rdv:`Pour prendre rendez-vous, cliquez sur "Prendre RDV" en haut de page ou appelez le 01 34 05 96 51. Disponibles lun–ven 9h–19h, sam 9h–18h.`,horaires:"Nos horaires : Lun–Ven 9h–19h / Sam 9h–18h / Dim fermé.",adresse:"Nous sommes au 1 bis Route de Saint-Denis, 95170 Deuil-la-Barre. Parking à proximité.",lentilles:"Oui, nous adaptons lentilles journalières, mensuelles et toriques. Essai gratuit sur RDV.",marques:"Nous proposons Ray-Ban, Silhouette, Oakley, Persol, Lindberg, Cartier, Tom Ford, Maui Jim, Chloé, Burberry et plus encore.",prix:"Nos montures sont disponibles à partir de 99€ pour tous les budgets. Tiers payant accepté avec toutes les mutuelles.",default:"Merci pour votre message. Appelez-nous au 01 34 05 96 51 ou venez en boutique pour une réponse personnalisée."};
+function togChat(){chatOpen=!chatOpen;document.getElementById('chatWin').classList.toggle('open',chatOpen);}
+function addChatMsg(txt,user){const b=document.getElementById('chatMsgs');const d=document.createElement('div');d.className='msg '+(user?'msg-usr':'msg-bot');d.textContent=txt;b.appendChild(d);b.scrollTop=b.scrollHeight;}
+function showTyp(){const b=document.getElementById('chatMsgs');const d=document.createElement('div');d.className='msg msg-bot typing';d.id='typ';d.innerHTML='<span></span><span></span><span></span>';b.appendChild(d);b.scrollTop=b.scrollHeight;}
+function remTyp(){const t=document.getElementById('typ');if(t)t.remove();}
+function sendChatMsg(){
+  const inp=document.getElementById('chatInp');const txt=inp.value.trim();if(!txt)return;
+  inp.value='';document.getElementById('chatQk').style.display='none';addChatMsg(txt,true);showTyp();
+  setTimeout(()=>{remTyp();const k=txt.toLowerCase();let r=answers.default;
+    if(k.includes('rdv')||k.includes('rendez'))r=answers.rdv;
+    else if(k.includes('heure')||k.includes('horaire')||k.includes('ouvert'))r=answers.horaires;
+    else if(k.includes('adresse')||k.includes('où')||k.includes('trouver'))r=answers.adresse;
+    else if(k.includes('lentille')||k.includes('contact'))r=answers.lentilles;
+    else if(k.includes('marque')||k.includes('ray-ban')||k.includes('silhouette')||k.includes('oakley'))r=answers.marques;
+    else if(k.includes('prix')||k.includes('tarif')||k.includes('coût')||k.includes('budget'))r=answers.prix;
+    addChatMsg(r,false);},1000);
+}
+function qr(t){document.getElementById('chatInp').value=t;sendChatMsg();}
+
+renderCat();
+</script>
+</body>
+</html>
